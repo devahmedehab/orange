@@ -1,8 +1,11 @@
+import 'package:carousel_slider/carousel_controller.dart';
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange/repositories/button_custom/ButtonCustom.dart';
 import 'package:orange/repositories/component.dart';
 
-import '../repositories/button_custom/ButtonCustom.dart';
 
 class AboutUSView extends StatefulWidget {
   @override
@@ -39,8 +42,8 @@ class _AboutUSViewState extends State<AboutUSView> {
                       padding: EdgeInsets.only(left: size.width * .05),
                       child: Stack(
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.all(15.0),
+                          Padding(
+                            padding: const EdgeInsets.all(15.0),
                             child: Text(
                               'Not only people\nneed a house',
                               style: TextStyle(
@@ -55,7 +58,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                             child: Container(
                               width: size.width * .26,
                               height: size.height * .6,
-                              child: const Text(
+                              child: Text(
                                 'Lorem ipsum dolor sit amet,'
                                     ' consetetur sadipscing elitr,'
                                     ' sed diam nonumy eirmod tempor invidunt ut labore et'
@@ -86,8 +89,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                                 text: 'Help Them',
                                 width: size.width * .25,
                                 hight: size.height * .1,
-                              //  image:
-                            ),
+                                icon: true),
                           ),
                         ],
                       ),
@@ -100,7 +102,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                     bottom: size.height * .2,
                     right: size.width * .1,
                   ),
-                  child: const Image(
+                  child: Image(
                     image: AssetImage('assets/images/image1.png'),
                     height: 400,
                     width: 400,
@@ -139,8 +141,8 @@ class _AboutUSViewState extends State<AboutUSView> {
                         padding: EdgeInsets.only(left: size.width * .05),
                         child: Stack(
                           children: [
-                            const Padding(
-                              padding: EdgeInsets.all(15.0),
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
                               child: Text(
                                 'About Petology ',
                                 style: TextStyle(
@@ -155,7 +157,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                               child: Container(
                                 width: size.width * .26,
                                 height: size.height * .6,
-                                child: const Text(
+                                child: Text(
                                   'Lorem ipsum dolor sit amet,'
                                       ' consetetur sadipscing elitr,'
                                       ' sed diam nonumy eirmod tempor invidunt'
@@ -186,7 +188,7 @@ class _AboutUSViewState extends State<AboutUSView> {
           color: Colors.white,
           child: Column(
             children: [
-              const Text(
+              Text(
                 'Our friends who looking for a house ',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -203,7 +205,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20),
                     child: Column(
                       children: [
                         SizedBox(
@@ -213,7 +215,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                               AspectRatio(
                                 aspectRatio: 1,
                                 child: Image(
-                                  image: const AssetImage(
+                                  image: AssetImage(
                                     "assets/images/elsa.png",
                                   ),
                                   width: width * 0.4,
@@ -235,7 +237,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                             ],
                           ),
                         ),
-                        const Text(
+                        Text(
                           "Elsa",style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -311,4 +313,3 @@ class AdaptionContent extends StatelessWidget {
     );
   }
 }
-
