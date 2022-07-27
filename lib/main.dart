@@ -12,6 +12,7 @@ import 'package:orange/view_models/home_cubit/home_view_model.dart';
 import 'package:orange/view_models/login_cubit/login_cubit.dart';
 import 'package:orange/view_models/register_cubit/register_cubit.dart';
 import 'package:orange/view_models/request_cubit/request_cubit.dart';
+import 'package:orange/view_models/services_view_model/services_cubit.dart';
 import 'package:orange/views/home_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
             create: (context) =>
-                HomeViewModelCubit()..getFooterData()..changeScreen(index)
+                HomeCubit()..getFooterData()..changeScreen(index)
         ),
         BlocProvider(
             create: (context) =>
@@ -63,6 +64,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) =>
             AboutUsCubit()..getAboutData()..changeScreen(index)
+        ),
+        BlocProvider(
+            create: (context) =>
+            ServicesCubit()
         ),
       ],
       child: MaterialApp(

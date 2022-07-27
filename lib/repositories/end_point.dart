@@ -12,6 +12,9 @@ const CREATE='/pets';
 
 const About='/static/homepage/second-section';
 
+const SERVICES='pets/request';
+
+
 
 
 

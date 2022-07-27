@@ -46,10 +46,10 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
 
-    return BlocConsumer<HomeViewModelCubit,HomeViewModelState>(
+    return BlocConsumer<HomeCubit,HomeViewModelState>(
       listener: (BuildContext context, state) {
 
-        var model = HomeViewModelCubit.get(context).footerModel;
+        var model = HomeCubit.get(context).footerModel;
 
         emailController.text = model.email as String;
         locationController.text = model.location as String;

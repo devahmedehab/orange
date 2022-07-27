@@ -13,11 +13,11 @@ import '../../views/services_view.dart';
 import '../../views/sign_up_view.dart';
 import 'HomeViewModelState.dart';
 
-class HomeViewModelCubit extends Cubit<HomeViewModelState> {
-  HomeViewModelCubit() : super(HomeViewModelInitial());
+class HomeCubit extends Cubit<HomeViewModelState> {
+  HomeCubit() : super(HomeViewModelInitial());
 
 
-  static HomeViewModelCubit get(context) => BlocProvider.of(context);
+  static HomeCubit get(context) => BlocProvider.of(context);
 
 
   var isHover = [false, false, false, false, false, false];
