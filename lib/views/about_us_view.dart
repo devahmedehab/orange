@@ -42,8 +42,8 @@ class _AboutUSViewState extends State<AboutUSView> {
                       padding: EdgeInsets.only(left: size.width * .05),
                       child: Stack(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15.0),
+                          const Padding(
+                            padding: EdgeInsets.all(15.0),
                             child: Text(
                               'Not only people\nneed a house',
                               style: TextStyle(
@@ -58,7 +58,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                             child: Container(
                               width: size.width * .26,
                               height: size.height * .6,
-                              child: Text(
+                              child: const Text(
                                 'Lorem ipsum dolor sit amet,'
                                     ' consetetur sadipscing elitr,'
                                     ' sed diam nonumy eirmod tempor invidunt ut labore et'
@@ -141,8 +141,8 @@ class _AboutUSViewState extends State<AboutUSView> {
                         padding: EdgeInsets.only(left: size.width * .05),
                         child: Stack(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.all(15.0),
+                            const Padding(
+                              padding: EdgeInsets.all(15.0),
                               child: Text(
                                 'About Petology ',
                                 style: TextStyle(
@@ -157,7 +157,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                               child: Container(
                                 width: size.width * .26,
                                 height: size.height * .6,
-                                child: Text(
+                                child: const Text(
                                   'Lorem ipsum dolor sit amet,'
                                       ' consetetur sadipscing elitr,'
                                       ' sed diam nonumy eirmod tempor invidunt'
@@ -188,7 +188,7 @@ class _AboutUSViewState extends State<AboutUSView> {
           color: Colors.white,
           child: Column(
             children: [
-              Text(
+              const Text(
                 'Our friends who looking for a house ',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -227,7 +227,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                                 right: 5,
                                 child: IconButton(
                                   onPressed: () {},
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.favorite,
                                     size: 22,
                                     color: Colors.grey,
@@ -237,7 +237,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                             ],
                           ),
                         ),
-                        Text(
+                        const Text(
                           "Elsa",style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
