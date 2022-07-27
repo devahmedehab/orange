@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/repositories/bloc_observer.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
+import 'package:orange/view_models/home_cubit/home_view_model.dart';
 import 'package:orange/view_models/login_cubit/login_cubit.dart';
 import 'package:orange/view_models/register_cubit/cubit.dart';
 import 'package:orange/views/home_view.dart';
@@ -41,6 +42,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 RegisterCubit()
+        ),
+        BlocProvider(
+            create: (context) =>
+                HomeViewModelCubit()..getFooterData()
         ),
       ],
       child: MaterialApp(

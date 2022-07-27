@@ -4,7 +4,7 @@ const SendOTP ='users/send-otp';
 
 const VerifyEmail= 'users/verify-email';
 
-const PROFILE='users/profile';
+const FOOTER='/static/homepage/footer';
 
 const REGISTER='/auth/register';
 

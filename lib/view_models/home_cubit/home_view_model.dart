@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:orange/models/footer_model.dart';
+import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/views/adaption.dart';
+import '../../repositories/constants.dart';
+import '../../repositories/end_point.dart';
 import '../../views/about_us_view.dart';
 import '../../views/login_view.dart';
 import '../../views/request_view.dart';
@@ -23,6 +27,29 @@ class HomeViewModelCubit extends Cubit<HomeViewModelState> {
     SignUpView(),
     LoginView(),
   ];
+
+
+ late FooterModel footerModel;
+
+
+  Future getFooterData() async{
+    emit(HomeFooterLoadingState());
+
+    await DioHelper.getData(
+      url: FOOTER,
+      token: token,
+
+    ).then((value) {
+      footerModel = FooterModel.fromJson(value.data);
+      printFullText(footerModel.location.toString());
+
+      emit(HomeFooterSuccessState(footerModel));
+    }).catchError((error) {
+      print(error.toString());
+      emit(HomeFooterErrorState(error.toString()));
+    });
+  }
+
 
   int index = 0;
 
