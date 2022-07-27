@@ -147,6 +147,91 @@ Widget defaultFormField({
         ),
       ),
     );
+class NavigationBarWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var navigationBarSize = MediaQuery.of(context).size;
+    return Container(
+      height: navigationBarSize.height * 0.1,
+      color: HexColor('180701'),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Row(
+          children: [
+            Container(
+              height: 50,
+              width: 100,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/image/logo.png"),
+                  )),
+            ),
+            SizedBox(
+              width: navigationBarSize.width * 0.15,
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "About Us",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(
+                  width: navigationBarSize.width * 0.1,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Adaption",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(
+                  width: navigationBarSize.width * 0.1,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Services",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(
+                  width: navigationBarSize.width * 0.1,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Contact",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FooterWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var footerSize = MediaQuery.of(context).size;
+    return Container(
+      height: footerSize.height * 0.3,
+      color: HexColor('180701'),
+    );
+  }
+}
+
 
 Widget myDivider({
 

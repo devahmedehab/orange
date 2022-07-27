@@ -21,6 +21,18 @@ void signOut(context) {
     }
   });
 }
+const Color primaryColor = Color(0xff56392D);
+const Color secondaryColor = Color(0xffFFE3C5);
+const Color gradientFirstColor = Color(0xff674739);
+const Color gradientSecondColor = Color(0xff180701);
+const textColorDrawer = Colors.white;
+const iconColorDrawer = Colors.white;
+const shadowColor = Color.fromRGBO(143, 148, 251, .2);
+
+const kRedColor = Color(0xFFE92E30);
+const kGrayColor = Colors.grey;
+const kBlackColor = Color(0xFF101010);
+const double kDefaultPadding = 20.0;
 
 
 
