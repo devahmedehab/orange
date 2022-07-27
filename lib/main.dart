@@ -43,15 +43,15 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) =>
-                LoginCubit()..changeScreen(index)
+                LoginCubit()
         ),
         BlocProvider(
             create: (context) =>
-                RegisterCubit()..changeScreen(index)
+                RegisterCubit()
         ),
         BlocProvider(
             create: (context) =>
-                HomeCubit()..getFooterData()..changeScreen(index)
+                HomeCubit()..getFooterData()
         ),
         BlocProvider(
             create: (context) =>
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
             create: (context) =>
-            AboutUsCubit()..getAboutData()..changeScreen(index)
+            AboutUsCubit()..getAboutData()
         ),
         BlocProvider(
             create: (context) =>

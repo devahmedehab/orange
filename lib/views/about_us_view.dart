@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange/views/home_view.dart';
 import '../repositories/component/component.dart';
+import '../repositories/component/constants.dart';
 import '../repositories/grid_view_component/grid_view_item.dart';
 import '../view_models/about_cubit/about_us_cubit.dart';
 
@@ -218,7 +220,13 @@ class _AboutUSViewState extends State<AboutUSView> {
                 ),
                 //cat
                 InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    print('asa');
+
+                    AboutUsCubit.get(context).changeScreen(6);
+                    navigateAndEnd(context, HomeView());
+
+                  },
                   child: Padding(
                     padding: EdgeInsets.only(left:size.width*.37,top:200 ),
                     child: Container(
@@ -314,7 +322,13 @@ class _AboutUSViewState extends State<AboutUSView> {
               ),
             ),
             myDefaultButton2(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    index=6;
+                  });
+                  AboutUsCubit.get(context).changeScreen(6);
+                  navigateAndEnd(context, HomeView());
+                },
                 color: HexColor('#492F24'),
                 textColor: HexColor('#D8BDA3'),
                 text: 'Show more',

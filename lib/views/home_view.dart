@@ -8,6 +8,7 @@ import 'package:orange/views/request_view.dart';
 import 'package:orange/views/services_view.dart';
 import 'package:orange/views/sign_up_view.dart';
 import '../repositories/component/component.dart';
+import '../repositories/component/constants.dart';
 import 'about_us_view.dart';
 import 'adaption_search_view.dart';
 import 'login_view.dart';
@@ -30,18 +31,8 @@ class _HomeViewState extends State<HomeView> {
   var locationController=TextEditingController();
   var location2Controller=TextEditingController();
   var phoneController=TextEditingController();
-  List <Widget> screens=
-  [
-    AboutUSView(),
-    AdaptionScreen(),
-    ServicesView(),
-    RequestView(),
-    SignUpView(),
-    LoginView(),
-    AdaptionSearchView()
-  ];
 
-  int index=0;
+
   @override
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
@@ -257,7 +248,7 @@ class _HomeViewState extends State<HomeView> {
           body:SingleChildScrollView(
             child: Column(
               children: [
-                screens[index],
+                HomeCubit.get(context).screens[index],
                 Container(
                   decoration:  BoxDecoration(
                       gradient:LinearGradient(begin:Alignment.bottomRight ,
