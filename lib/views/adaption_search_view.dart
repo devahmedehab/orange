@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
+import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/grid_view_component/grid_view_item.dart';
-import 'package:orange/view_models/adaption_cubit.dart';
+import 'package:orange/view_models/adaption_cubit/adaption_cubit.dart';
+import 'package:orange/view_models/adaption_cubit/adaption_state.dart';
 
 class AdaptionSearchView extends StatelessWidget {
   const AdaptionSearchView({Key? key}) : super(key: key);
@@ -12,10 +14,21 @@ class AdaptionSearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
-    List items = ["Dog", "Cat","Reda", "Ehab"];
+    List<String> items = ['!', '@','&', '#'];
     return  BlocConsumer<AdaptionCubit,AdaptionState>(
-      listener: (BuildContext context, state) {  },
+      listener: (BuildContext context, state) {
+        if(state is FilterGridSuccessState){
+
+
+
+        }
+
+
+       var model =AdaptionCubit.get(context).filterGridModel;
+      },
+
       builder: (BuildContext context, Object? state) {
+
         return Stack(
           children: [
             Positioned(
@@ -115,8 +128,8 @@ class AdaptionSearchView extends StatelessWidget {
                             myDropdown(
                               height: h * 0.07,
                               width: w * 0.13,
-                              dropItems: items,
-                              selectedItem: items[0],
+                              dropItems:items,
+                              selectedItem: items[0] ,
                               hintText: "Breed",
                             ),
                             myDropdown(

@@ -1,27 +1,29 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:orange/models/filter_grid_model.dart';
 import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 
-import '../repositories/end_point.dart';
+import '../../repositories/end_point.dart';
+import 'adaption_state.dart';
 
-part 'adaption_state.dart';
 
 class AdaptionCubit extends Cubit<AdaptionState> {
   AdaptionCubit() : super(AdaptionInitial());
 
+  static AdaptionCubit get(context) => BlocProvider.of(context);
 
 
 
   late FilterGridModel filterGridModel;
 
 
-  Future getFooterData() async{
+  Future getListData() async{
     emit(FilterGridLoadingState());
 
     await DioHelper.getData(
-      url: FOOTER,
+      url: '/static/homepage/footer/$catId',
       token: token,
 
     ).then((value) {

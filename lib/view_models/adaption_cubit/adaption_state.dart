@@ -1,6 +1,6 @@
-part of 'adaption_cubit.dart';
 
-@immutable
+import '../../models/filter_grid_model.dart';
+
 abstract class AdaptionState {}
 
 class AdaptionInitial extends AdaptionState {}

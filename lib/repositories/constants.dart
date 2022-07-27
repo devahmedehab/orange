@@ -41,17 +41,16 @@ void printFullText(String text) {
   pattern.allMatches(text).forEach((match) => print(match.group(0)));
 }
 int index = 0;
-
+int catId= 1;
 
 String token = '';
-var uid = '';
-String firstname='';
-String email='';
-String phone='';
-String lastname='';
-String country='';
-String oldPassword='';
-String newPassword='';
+var item1 = '';
+var item2='';
+var item3='';
+var item4='';
+var item5='';
+var item6='';
+
 
 Color color=Colors.white;
 

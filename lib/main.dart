@@ -6,6 +6,7 @@ import 'package:orange/repositories/bloc_observer.dart';
 import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
+import 'package:orange/view_models/adaption_cubit/adaption_cubit.dart';
 import 'package:orange/view_models/home_cubit/home_view_model.dart';
 import 'package:orange/view_models/login_cubit/login_cubit.dart';
 import 'package:orange/view_models/register_cubit/cubit.dart';
@@ -54,6 +55,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) =>
             RequestCubit()
+        ),
+        BlocProvider(
+            create: (context) =>
+                AdaptionCubit()..getListData()
         ),
       ],
       child: MaterialApp(
