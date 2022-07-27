@@ -1,12 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:orange/models/filter_grid_model.dart';
 import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 
-import '../../repositories/end_point.dart';
-import 'adaption_state.dart';
+import '../about_cubit/adaption_state.dart';
 
 
 class AdaptionCubit extends Cubit<AdaptionState> {

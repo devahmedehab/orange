@@ -4,8 +4,9 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
 import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/grid_view_component/grid_view_item.dart';
-import 'package:orange/view_models/adaption_cubit/adaption_cubit.dart';
-import 'package:orange/view_models/adaption_cubit/adaption_state.dart';
+import 'package:orange/view_models/about_cubit/adaption_state.dart';
+
+import '../view_models/about_cubit/adaption_cubit.dart';
 
 class AdaptionSearchView extends StatelessWidget {
   const AdaptionSearchView({Key? key}) : super(key: key);

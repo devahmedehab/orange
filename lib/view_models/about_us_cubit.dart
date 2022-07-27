@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:orange/models/about_model.dart';
+import 'package:orange/repositories/end_point.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 
 import '../repositories/constants.dart';
@@ -15,11 +16,11 @@ class AboutUsCubit extends Cubit<AboutUsState> {
   late AboutsModel aboutsModel;
 
 
-  Future getListData() async{
+  Future getAboutData() async{
     emit(AboutUsLoadingState());
 
     await DioHelper.getData(
-      url: ,
+      url:About ,
       token: token,
 
     ).then((value) {

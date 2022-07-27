@@ -6,13 +6,13 @@ import 'package:orange/repositories/bloc_observer.dart';
 import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
-import 'package:orange/view_models/adaption_cubit/adaption_cubit.dart';
+import 'package:orange/view_models/about_cubit/adaption_cubit.dart';
+import 'package:orange/view_models/about_us_cubit.dart';
 import 'package:orange/view_models/home_cubit/home_view_model.dart';
 import 'package:orange/view_models/login_cubit/login_cubit.dart';
 import 'package:orange/view_models/register_cubit/register_cubit.dart';
 import 'package:orange/view_models/request_cubit/request_cubit.dart';
 import 'package:orange/views/home_view.dart';
-import 'package:orange/views/request_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 void main() async{
@@ -59,6 +59,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 AdaptionCubit()..getListData()
+        ),
+        BlocProvider(
+            create: (context) =>
+            AboutUsCubit()..getAboutData()
         ),
       ],
       child: MaterialApp(
