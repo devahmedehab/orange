@@ -69,6 +69,7 @@ void navigateTo(context, widget) => Navigator.push(
 );
 
 Widget defaultFormField({
+  var textColor,
   Iterable<String> ?autofill,
   required TextEditingController controller,
   required TextInputType type,
@@ -113,6 +114,8 @@ Widget defaultFormField({
             validator:validate(),
             decoration: InputDecoration(
               labelText: label,
+              labelStyle: TextStyle(color: textColor,fontWeight: FontWeight.w500),
+
               prefixIcon: Icon(
                 prefix,
               ),

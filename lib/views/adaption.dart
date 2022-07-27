@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class CategoriesView extends StatefulWidget {
+class AdaptionView extends StatefulWidget {
   @override
-  _CategoriesViewState createState() => _CategoriesViewState();
+  _AdaptionViewState createState() => _AdaptionViewState();
 }
 
-class _CategoriesViewState extends State<CategoriesView> {
+class _AdaptionViewState extends State<AdaptionView> {
   @override
   Widget build(BuildContext context) {
     return Container(

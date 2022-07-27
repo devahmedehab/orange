@@ -5,7 +5,7 @@ import 'package:orange/views/request_view.dart';
 import 'package:orange/views/services_view.dart';
 import 'package:orange/views/sign_up_view.dart';
 import 'about_us_view.dart';
-import 'categories_view.dart';
+import 'adaption.dart';
 import 'login_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -20,7 +20,7 @@ class _HomeViewState extends State<HomeView> {
   List <Widget> screens=
   [
     AboutUSView(),
-    CategoriesView(),
+    AdaptionView(),
     ServicesView(),
     RequestView(),
     SignUpView(),
