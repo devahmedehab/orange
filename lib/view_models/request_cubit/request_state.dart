@@ -16,6 +16,7 @@ class RequestErrorState extends RequestStates{
 
   RequestErrorState(this.error);
 }
+class RequestChangeScreenState extends RequestStates{}
 
 
 

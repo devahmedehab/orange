@@ -20,13 +20,24 @@ class RequestCubit extends Cubit<RequestStates> {
   late SendFilterModel sendFilterModel;
   void dogData({
     required String breed,
-    required String age,
+    required String name,
+    required String phone,
+    required String description,
+
+    required String category,
+    required String year,
+    required String month,
+
     required String size,
     required String goodWith,
     required String gender,
     required String color,
     required String hairLength,
-    required String behaviour,
+    required String careBehavior,
+    required String houseTrained,
+    required String location,
+
+
 
 
   }) {
@@ -34,14 +45,24 @@ class RequestCubit extends Cubit<RequestStates> {
     DioHelper.postData(
       url: CREATE,
       data: {
-        'breed': breed,
-        'age': age,
+        'name': name,
+        'year': year,
+        'month': month,
         'size': size,
-        'goodWith': goodWith,
+        'breed': breed,
         'gender': gender,
-        'color': color,
         'hairLength': hairLength,
-        'behaviour': behaviour,
+        'color': color,
+        'careBehavior': careBehavior,
+        'houseTrained': houseTrained,
+        'description':description,
+        'location': location,
+        'category': category,
+        'phone': phone,
+
+
+
+        'goodWith': goodWith,
       },
     ).then((value) {
       print(value.data);
@@ -128,7 +149,8 @@ class RequestCubit extends Cubit<RequestStates> {
     'Blue',
     'Grey'
   ];
-  String selectedColor = 'Red';
+  String selectedColors = 'Brown';
+
 
   List<String> goodWith =[
     "PET FRIENDLY",
@@ -138,5 +160,11 @@ class RequestCubit extends Cubit<RequestStates> {
       String selectedGood = 'PET FRIENDLY';
 
 
+  void changeScreen(int currentIndex)
+  {
 
+    index=currentIndex;
+
+    emit(RequestChangeScreenState());
+  }
 }

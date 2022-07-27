@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
+import 'package:orange/views/home_view.dart';
 
 import '../view_models/request_cubit/request_cubit.dart';
 import '../view_models/request_cubit/request_state.dart';
@@ -26,6 +27,12 @@ class _RequestViewState extends State<RequestView> {
         .size;
     return BlocConsumer<RequestCubit, RequestStates>(
       listener: (BuildContext context, state) {
+        if (state is RequestSuccessState) {
+
+            RequestCubit.get(context).changeScreen(0);
+            navigateAndEnd(context, HomeView());
+
+          }
 
       },
       builder: (BuildContext context, Object? state) {
@@ -103,6 +110,7 @@ class _RequestViewState extends State<RequestView> {
                             child: Padding(
                               padding: EdgeInsets.only(top: size.height * .7),
                               child: defaultFormField(
+
                                 label: 'Name',
                                 height: size.height * .1,
                                 width: size.width * .4,
@@ -257,12 +265,12 @@ class _RequestViewState extends State<RequestView> {
                                             .selectedHouseTrained,
                                         hintText: 'House Trained'
                                     ),
-                                    SizedBox(width: 20,),
+                                    const SizedBox(width: 20,),
                                     myDropdown(
                                         height: size.height * .1,
                                         width: size.width * .192,
                                         dropItems: cubit.colors,
-                                        selectedItem: cubit.selectedColor,
+                                        selectedItem: cubit.selectedColors,
                                         hintText: 'Color'
                                     ),
 
@@ -370,12 +378,16 @@ class _RequestViewState extends State<RequestView> {
                                     width: size.width * .4,
                                     onPressed: () {
                                       RequestCubit.get(context).dogData(
+                                        phone: phoneController.text,
+                                        description: descriptionController.text,
+                                        name: nameController.text,
+                                        category: model.selectedCategory,
                                         breed: model.selectedBreed ,
                                         age: model.selectedYear ,
                                         size: model.selectedSize,
                                         goodWith: model.selectedGood,
                                         gender: model.selectedGender,
-                                        color: model.selectedColor,
+                                        color: model.selectedColors,
                                         hairLength: model.selectedHairLength,
                                         behaviour: model.selectedBehaviour,
                                       );
@@ -388,7 +400,7 @@ class _RequestViewState extends State<RequestView> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 100,)
+                    const SizedBox(height: 100,)
                   ],
                 ),
               ],
