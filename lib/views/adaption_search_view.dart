@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
 import 'package:orange/repositories/grid_view_component/grid_view_item.dart';
+import 'package:orange/view_models/adaption_cubit.dart';
 
 class AdaptionSearchView extends StatelessWidget {
   const AdaptionSearchView({Key? key}) : super(key: key);
@@ -11,27 +13,16 @@ class AdaptionSearchView extends StatelessWidget {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     List items = ["Dog", "Cat","Reda", "Ehab"];
-    return  Stack(
-        children: [
-          Positioned(
-            right: 0,
-            top: 0,
-            child: Image(
-              image: AssetImage(
-                "assets/images/leg.png",
-              ),
-              width: w * 0.4,
-              height: h * 0.4,
-              color: HexColor("#FFE3C5"),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            child: RotatedBox(
-              quarterTurns: 2,
+    return  BlocConsumer<AdaptionCubit,AdaptionState>(
+      listener: (BuildContext context, state) {  },
+      builder: (BuildContext context, Object? state) {
+        return Stack(
+          children: [
+            Positioned(
+              right: 0,
+              top: 0,
               child: Image(
-                image: AssetImage(
+                image: const AssetImage(
                   "assets/images/leg.png",
                 ),
                 width: w * 0.4,
@@ -39,20 +30,34 @@ class AdaptionSearchView extends StatelessWidget {
                 color: HexColor("#FFE3C5"),
               ),
             ),
-          ),
-          Positioned(
-            left: 0,
-            top: h * .500,
-            child: Image(
-              image: AssetImage(
-                "assets/images/leg.png",
+            Positioned(
+              left: 0,
+              top: 0,
+              child: RotatedBox(
+                quarterTurns: 2,
+                child: Image(
+                  image: const AssetImage(
+                    "assets/images/leg.png",
+                  ),
+                  width: w * 0.4,
+                  height: h * 0.4,
+                  color: HexColor("#FFE3C5"),
+                ),
               ),
-              color: HexColor("#FFE3C5"),
-              width: w * 0.4,
-              height: h * 0.4,
             ),
-          ),
-          SingleChildScrollView(
+            Positioned(
+              left: 0,
+              top: h * .500,
+              child: Image(
+                image: AssetImage(
+                  "assets/images/leg.png",
+                ),
+                color: HexColor("#FFE3C5"),
+                width: w * 0.4,
+                height: h * 0.4,
+              ),
+            ),
+            SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Container(
@@ -181,7 +186,7 @@ class AdaptionSearchView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
@@ -275,8 +280,10 @@ class AdaptionSearchView extends StatelessWidget {
               ),
             ),
 
-        ],
+          ],
 
+        );
+      },
     );
 
   }
