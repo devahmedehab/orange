@@ -133,19 +133,19 @@ class RequestCubit extends Cubit<RequestStates> {
   List<String> houseTrained = ['Yes', 'No'];
   String selectedHouseTrained = 'Yes';
 
-  List<String> colors = [
+  List<String> dogColor = [
     'Brown',
     'Dark chocolate',
     'Red',
     'Golden',
     'Yellow',
     'Cream',
-    'Blue',
+    /*'Blue',
     'Kerry',
     'Blue',
-    'Grey'
+    'Grey'*/
   ];
-  String selectedColors = 'Brown';
+  String selectedDogColor = 'Brown';
 
 
   List<String> goodWith =[

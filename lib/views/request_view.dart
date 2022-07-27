@@ -269,8 +269,8 @@ class _RequestViewState extends State<RequestView> {
                                     myDropdown(
                                         height: size.height * .1,
                                         width: size.width * .192,
-                                        dropItems: cubit.colors,
-                                        selectedItem: cubit.selectedColors,
+                                        dropItems: cubit.dogColor,
+                                        selectedItem: cubit.selectedDogColor,
                                         hintText: 'Color'
                                     ),
 
@@ -387,7 +387,7 @@ class _RequestViewState extends State<RequestView> {
                                         size: model.selectedSize,
                                         goodWith: model.selectedGood,
                                         gender: model.selectedGender,
-                                        color: model.selectedColors,
+                                        color: model.selectedDogColor,
                                         hairLength: model.selectedHairLength,
                                         careBehavior: model.selectedBehaviour,
                                         location: locationController.text,

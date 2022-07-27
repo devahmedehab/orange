@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/repositories/bloc_observer.dart';
+import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/view_models/home_cubit/home_view_model.dart';
@@ -40,15 +41,15 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) =>
-                LoginCubit()
+                LoginCubit()..changeScreen(index)
         ),
         BlocProvider(
             create: (context) =>
-                RegisterCubit()
+                RegisterCubit()..changeScreen(index)
         ),
         BlocProvider(
             create: (context) =>
-                HomeViewModelCubit()..getFooterData()
+                HomeViewModelCubit()..getFooterData()..changeScreen(index)
         ),
         BlocProvider(
             create: (context) =>

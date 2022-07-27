@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:orange/repositories/button_custom/ButtonCustom.dart';
 
@@ -7,7 +6,7 @@ Widget BuildCard(context) {
   var height = MediaQuery.of(context).size.height;
 
   return Card(
-    color: Color(0xffeaeaea),
+    color: const Color(0xffeaeaea),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(15),
     ),
@@ -22,8 +21,8 @@ Widget BuildCard(context) {
                 AspectRatio(
                   aspectRatio: 1,
                   child: Image(
-                    image: AssetImage(
-                      "assets/image/elsa.png",
+                    image: const AssetImage(
+                      "assets/images/elsa.png",
                     ),
                     width: width * 0.4,
                     height: height * 0.4,
@@ -34,7 +33,7 @@ Widget BuildCard(context) {
                   right: 5,
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.favorite,
                       size: 22,
                       color: Colors.grey,
@@ -44,13 +43,13 @@ Widget BuildCard(context) {
               ],
             ),
           ),
-          Text(
+          const Text(
             "Elsa",style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Padding(
@@ -63,7 +62,7 @@ Widget BuildCard(context) {
                   onTap: () {},
                   height: height * .04,
                   width: width * .1,
-                  icon: Icon(Icons.abc),
+                  icon: const Icon(Icons.abc),
                   color: Colors.black,
                   color2: Colors.white,
                 ),

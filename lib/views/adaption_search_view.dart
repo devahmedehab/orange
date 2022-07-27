@@ -3,23 +3,22 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
 import 'package:orange/repositories/grid_view_component/grid_view_item.dart';
 
-class GetAdaptionScreen extends StatelessWidget {
-  const GetAdaptionScreen({Key? key}) : super(key: key);
+class AdaptionSearchView extends StatelessWidget {
+  const AdaptionSearchView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     List items = ["Dog", "Cat","Reda", "Ehab"];
-    return Scaffold(
-      body: Stack(
+    return  Stack(
         children: [
           Positioned(
             right: 0,
             top: 0,
             child: Image(
               image: AssetImage(
-                "assets/image/leg.png",
+                "assets/images/leg.png",
               ),
               width: w * 0.4,
               height: h * 0.4,
@@ -33,7 +32,7 @@ class GetAdaptionScreen extends StatelessWidget {
               quarterTurns: 2,
               child: Image(
                 image: AssetImage(
-                  "assets/image/leg.png",
+                  "assets/images/leg.png",
                 ),
                 width: w * 0.4,
                 height: h * 0.4,
@@ -46,16 +45,14 @@ class GetAdaptionScreen extends StatelessWidget {
             top: h * .500,
             child: Image(
               image: AssetImage(
-                "assets/image/leg.png",
+                "assets/images/leg.png",
               ),
               color: HexColor("#FFE3C5"),
               width: w * 0.4,
               height: h * 0.4,
             ),
           ),
-          Scaffold(
-            backgroundColor: Colors.transparent,
-            body: SingleChildScrollView(
+          SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Container(
@@ -243,7 +240,7 @@ class GetAdaptionScreen extends StatelessWidget {
                             child: GridView.builder(
                               itemCount: 9,
                               gridDelegate:
-                                  const SliverGridDelegateWithMaxCrossAxisExtent(
+                              const SliverGridDelegateWithMaxCrossAxisExtent(
                                 childAspectRatio: .8,
                                 mainAxisSpacing: 9,
                                 crossAxisSpacing: 6.0,
@@ -277,9 +274,10 @@ class GetAdaptionScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+
         ],
-      ),
+
     );
+
   }
 }

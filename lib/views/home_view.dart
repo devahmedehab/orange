@@ -5,6 +5,7 @@ import 'package:orange/repositories/component.dart';
 import 'package:orange/view_models/home_cubit/HomeViewModelState.dart';
 import 'package:orange/view_models/home_cubit/home_view_model.dart';
 import 'package:orange/views/adaption.dart';
+import 'package:orange/views/adaption_search_view.dart';
 import 'package:orange/views/request_view.dart';
 import 'package:orange/views/services_view.dart';
 import 'package:orange/views/sign_up_view.dart';
@@ -32,7 +33,8 @@ class _HomeViewState extends State<HomeView> {
   List <Widget> screens=
   [
     AboutUSView(),
-    AdaptionScreen(),
+    AdaptionSearchView(),
+  //  AdaptionScreen(),
     HelpYourFriendScreen(),
     RequestView(),
     SignUpView(),
