@@ -360,7 +360,7 @@ Widget myDefaultButton2({
   double? hight,
   double? width,
   String? text,
-  Function? onPressed,
+  Function()? onPressed,
   Color? color,
   Color? textColor,
   String? image
@@ -370,30 +370,29 @@ Widget myDefaultButton2({
   decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(35),
       color:color,
-    border:Border.all(color: Colors.grey)
+      border:Border.all(color: Colors.grey)
   ),
   child: MaterialButton(
-
-    onPressed: ()=>onPressed,
-    child:Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left:15.0),
-          child: Image(image:AssetImage('$image',),
-          width:35 ,
-          height:35 ,),
-        ),
-        const SizedBox(width:20,),
-        Center(
-          child: Text('$text',style: TextStyle(
-              color:textColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 23
+      onPressed:onPressed,
+      child:Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left:15.0),
+            child: Image(image:AssetImage('$image',),
+              width:35 ,
+              height:35 ,),
           ),
+          SizedBox(width:20,),
+          Center(
+            child: Text('$text',style: TextStyle(
+                color:textColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 23
+            ),
+            ),
           ),
-        ),
-      ],
-    )
+        ],
+      )
   ),
 );
 
