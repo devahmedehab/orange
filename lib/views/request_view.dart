@@ -97,7 +97,7 @@ class _RequestViewState extends State<RequestView> {
                             child: Padding(
                               padding: EdgeInsets.only(
                                   top: size.height * .00001),
-                              child: Image(
+                              child: const Image(
                                 image: AssetImage(
                                     'assets/images/requestDog.png'),
                                 height: 600,
@@ -236,7 +236,7 @@ class _RequestViewState extends State<RequestView> {
                                         selectedItem: cubit.selectedHairLength,
                                         hintText: 'Hair Length'
                                     ),
-                                    SizedBox(width: 20,),
+                                    const SizedBox(width: 20,),
                                     myDropdown(
                                         height: size.height * .1,
                                         width: size.width * .192,

@@ -1,66 +1,94 @@
-class SendFilterModel {
-  List<String>? breed;
-  List<String>? ages;
-  List<String>? size;
-  List<String>? goodWith;
-  Gender? gender;
-  List<String>? colors;
-  List<String>? hairLength;
-  List<String>? behaviour;
+class PetsModel {
+  Pet? pet;
 
-  SendFilterModel(
-      {this.breed,
-        this.ages,
-        this.size,
-        this.goodWith,
-        this.gender,
-        this.colors,
-        this.hairLength,
-        this.behaviour});
+  PetsModel({this.pet});
 
-  SendFilterModel.fromJson(Map<String, dynamic> json) {
-    breed = json['breed'].cast<String>();
-    ages = json['ages'].cast<String>();
-    size = json['size'].cast<String>();
-    goodWith = json['goodWith'].cast<String>();
-    gender =
-    json['gender'] != null ? new Gender.fromJson(json['gender']) : null;
-    colors = json['colors'].cast<String>();
-    hairLength = json['hairLength'].cast<String>();
-    behaviour = json['behaviour'].cast<String>();
+  PetsModel.fromJson(Map<String, dynamic> json) {
+    pet = json['pet'] != null ? Pet.fromJson(json['pet']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['breed'] = this.breed;
-    data['ages'] = this.ages;
-    data['size'] = this.size;
-    data['goodWith'] = this.goodWith;
-    if (this.gender != null) {
-      data['gender'] = this.gender!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (pet != null) {
+      data['pet'] = pet!.toJson();
     }
-    data['colors'] = this.colors;
-    data['hairLength'] = this.hairLength;
-    data['behaviour'] = this.behaviour;
     return data;
   }
 }
 
-class Gender {
-  int? male;
-  int? female;
+class Pet {
+  String? name;
+  int? year;
+  int? month;
+  String? size;
+  String? breed;
+  bool? gender;
+  String? hairLength;
+  String? color;
+  String? careBehavior;
+  bool? houseTrained;
+  String? description;
+  String? location;
+  String? phone;
+  bool? vaccinated;
+  int? categoryId;
+  List<String>? image;
 
-  Gender({this.male, this.female});
+  Pet(
+      {this.name,
+        this.year,
+        this.month,
+        this.size,
+        this.breed,
+        this.gender,
+        this.hairLength,
+        this.color,
+        this.careBehavior,
+        this.houseTrained,
+        this.description,
+        this.location,
+        this.phone,
+        this.vaccinated,
+        this.categoryId,
+        this.image});
 
-  Gender.fromJson(Map<String, dynamic> json) {
-    male = json['male'];
-    female = json['female'];
+  Pet.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    year = json['year'];
+    month = json['month'];
+    size = json['size'];
+    breed = json['breed'];
+    gender = json['gender'];
+    hairLength = json['hairLength'];
+    color = json['color'];
+    careBehavior = json['careBehavior'];
+    houseTrained = json['houseTrained'];
+    description = json['description'];
+    location = json['location'];
+    phone = json['phone'];
+    vaccinated = json['vaccinated'];
+    categoryId = json['categoryId'];
+    image = json['image'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['male'] = this.male;
-    data['female'] = this.female;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['name'] = name;
+    data['year'] = year;
+    data['month'] = month;
+    data['size'] = size;
+    data['breed'] = breed;
+    data['gender'] = gender;
+    data['hairLength'] = hairLength;
+    data['color'] = color;
+    data['careBehavior'] = careBehavior;
+    data['houseTrained'] = houseTrained;
+    data['description'] = description;
+    data['location'] = location;
+    data['phone'] = phone;
+    data['vaccinated'] = vaccinated;
+    data['categoryId'] = categoryId;
+    data['image'] = image;
     return data;
   }
 }

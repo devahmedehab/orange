@@ -7,9 +7,9 @@ class RequestInitialState extends RequestStates{}
 class RequestLoadingState extends RequestStates{}
 class RequestSuccessState extends RequestStates{
 
-  final SendFilterModel sendFilterModel;
+  final PetsModel petsModel;
 
-  RequestSuccessState(this.sendFilterModel);
+  RequestSuccessState(this.petsModel);
 }
 class RequestErrorState extends RequestStates{
   final String error;

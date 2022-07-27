@@ -17,17 +17,15 @@ class RequestCubit extends Cubit<RequestStates> {
 
 
 
-  late SendFilterModel sendFilterModel;
+  late PetsModel petsModel;
   void dogData({
     required String breed,
     required String name,
     required String phone,
     required String description,
-
     required String category,
     required String year,
     required String month,
-
     required String size,
     required String goodWith,
     required String gender,
@@ -66,10 +64,10 @@ class RequestCubit extends Cubit<RequestStates> {
       },
     ).then((value) {
       print(value.data);
-      sendFilterModel = SendFilterModel.fromJson(value.data);
+      petsModel = PetsModel.fromJson(value.data);
 
 
-      emit(RequestSuccessState(sendFilterModel));
+      emit(RequestSuccessState(petsModel));
     }).catchError((error) {
       print(error.toString());
       emit(RequestErrorState(error.toString()));
