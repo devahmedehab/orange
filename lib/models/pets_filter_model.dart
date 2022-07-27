@@ -65,32 +65,6 @@ class PetsFilterModel {
     category = json['category'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = id;
-    data['name'] = name;
-    data['image'] = image;
-    data['year'] = year;
-    data['month'] = month;
-    data['size'] = size;
-    data['breed'] = breed;
-    data['gender'] = gender;
-    data['hairLength'] = hairLength;
-    data['color'] = color;
-    data['careBehavior'] = careBehavior;
-    data['houseTrained'] = houseTrained;
-    data['description'] = description;
-    data['location'] = location;
-    data['phone'] = phone;
-    data['vaccinated'] = vaccinated;
-    data['categoryId'] = categoryId;
-    data['userId'] = userId;
-    if (user != null) {
-      data['user'] = user!.toJson();
-    }
-    data['category'] = category;
-    return data;
-  }
 }
 
 class User {
@@ -104,10 +78,4 @@ class User {
     lastName = json['lastName'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['firstName'] = firstName;
-    data['lastName'] = lastName;
-    return data;
-  }
 }

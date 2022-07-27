@@ -13,12 +13,4 @@ class FooterModel {
     location2 = json['location2'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['email'] = email;
-    data['location'] = location;
-    data['phone'] = phone;
-    data['location2'] = location2;
-    return data;
-  }
 }

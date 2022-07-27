@@ -7,13 +7,7 @@ class PetsModel {
     pet = json['pet'] != null ? new Pet.fromJson(json['pet']) : null;
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (pet != null) {
-      data['pet'] = pet!.toJson();
-    }
-    return data;
-  }
+
 }
 
 class Pet {
@@ -71,24 +65,5 @@ class Pet {
     image = json['image'].cast<String>();
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['name'] = name;
-    data['year'] = year;
-    data['month'] = month;
-    data['size'] = size;
-    data['breed'] = breed;
-    data['gender'] = gender;
-    data['hairLength'] = hairLength;
-    data['color'] = color;
-    data['careBehavior'] = careBehavior;
-    data['houseTrained'] = houseTrained;
-    data['description'] = description;
-    data['location'] = location;
-    data['phone'] = phone;
-    data['vaccinated'] = vaccinated;
-    data['categoryId'] = categoryId;
-    data['image'] = image;
-    return data;
-  }
+
 }

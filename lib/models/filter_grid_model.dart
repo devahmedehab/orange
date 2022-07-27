@@ -30,20 +30,6 @@ class FilterGridModel {
     behaviour = json['behaviour'].cast<String>();
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['breed'] = breed;
-    data['ages'] = ages;
-    data['size'] = size;
-    data['goodWith'] = goodWith;
-    if (gender != null) {
-      data['gender'] = gender!.toJson();
-    }
-    data['colors'] = colors;
-    data['hairLength'] = hairLength;
-    data['behaviour'] = behaviour;
-    return data;
-  }
 }
 
 class Gender {
@@ -57,10 +43,5 @@ class Gender {
     female = json['female'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['male'] = male;
-    data['female'] = female;
-    return data;
-  }
+
 }

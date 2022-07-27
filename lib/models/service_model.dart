@@ -14,12 +14,5 @@ class ServiceModel {
     phoneNumber = json['phoneNumber'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['categoryId'] = categoryId;
-    data['imageBase64'] = imageBase64;
-    data['location'] = location;
-    data['phoneNumber'] = phoneNumber;
-    return data;
-  }
+
 }
