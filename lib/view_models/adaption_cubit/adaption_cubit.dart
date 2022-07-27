@@ -4,7 +4,7 @@ import 'package:orange/models/filter_grid_model.dart';
 import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 
-import '../about_cubit/adaption_state.dart';
+import 'adaption_state.dart';
 
 
 class AdaptionCubit extends Cubit<AdaptionState> {

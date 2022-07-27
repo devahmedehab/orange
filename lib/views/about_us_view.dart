@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
 import '../repositories/grid_view_component/grid_view_item.dart';
-import '../view_models/about_us_cubit.dart';
+import '../view_models/about_cubit/about_us_cubit.dart';
 
 class AboutUSView extends StatefulWidget {
   @override
@@ -15,7 +15,6 @@ class _AboutUSViewState extends State<AboutUSView> {
   Widget build(BuildContext context) {
     var titleController = TextEditingController();
     var bodyController = TextEditingController();
-
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     var size = MediaQuery.of(context).size;
