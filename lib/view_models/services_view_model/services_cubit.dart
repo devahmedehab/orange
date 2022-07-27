@@ -1,15 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:orange/view_models/services_view_model/services_state.dart';
 
 import '../../models/service_model.dart';
 import '../../repositories/end_point.dart';
 import '../../repositories/network/dio_helper.dart';
 
-part 'services_state.dart';
 
-class ServicesCubit extends Cubit<ServicesViewModelState> {
-  ServicesCubit() : super(ServicesViewModelInitial());
+class ServicesCubit extends Cubit<ServicesState> {
+  ServicesCubit() : super(ServicesInitial());
 
   static ServicesCubit get(context) => BlocProvider.of(context);
 
@@ -26,7 +26,7 @@ class ServicesCubit extends Cubit<ServicesViewModelState> {
     required String phoneNumber,
 
   }) {
-    emit(RequestLoadingState());
+    emit(ServicesLoadingState());
     DioHelper.postData(
       url: SERVICES,
       data: {
@@ -40,10 +40,10 @@ class ServicesCubit extends Cubit<ServicesViewModelState> {
       print(value.data);
       servicesModel = ServicesModel.fromJson(value.data);
 
-      emit(RequestSuccessState(servicesModel));
+      emit(ServicesSuccessState(servicesModel));
     }).catchError((error) {
       print(error.toString());
-      emit(RequestErrorState(error.toString()));
+      emit(ServicesErrorState(error.toString()));
     });
   }
 }

@@ -34,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
   [
     AboutUSView(),
     AdaptionScreen(),
-    HelpYourFriendScreen(),
+    ServicesView(),
     RequestView(),
     SignUpView(),
     LoginView(),

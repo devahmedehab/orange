@@ -1,19 +1,19 @@
-part of 'services_cubit.dart';
-@immutable
-abstract class ServicesViewModelState {}
+import 'package:orange/models/service_model.dart';
 
-class ServicesViewModelInitial extends ServicesViewModelState {}
+abstract class ServicesState {}
 
-class RequestLoadingState extends ServicesViewModelState{}
+class ServicesInitial extends ServicesState {}
 
-class RequestSuccessState extends ServicesViewModelState{
+class ServicesLoadingState extends ServicesState{}
+
+class ServicesSuccessState extends ServicesState{
 
   final ServicesModel sendFilterModel;
 
-  RequestSuccessState(this.sendFilterModel);
+  ServicesSuccessState(this.sendFilterModel);
 }
-class RequestErrorState extends ServicesViewModelState{
+class ServicesErrorState extends ServicesState{
   final String error;
 
-  RequestErrorState(this.error);
+  ServicesErrorState(this.error);
 }
