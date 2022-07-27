@@ -3,6 +3,7 @@ import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/view_models/request_cubit/request_state.dart';
 
 import '../../models/send_filter_model.dart';
+import '../../repositories/constants.dart';
 import '../../repositories/end_point.dart';
 import '../login_cubit/login_states.dart';
 
@@ -12,6 +13,8 @@ class RequestCubit extends Cubit<RequestStates> {
   RequestCubit() :super (RequestInitialState());
 
   static RequestCubit get(context) => BlocProvider.of(context);
+
+
 
 
   late SendFilterModel sendFilterModel;
@@ -126,6 +129,14 @@ class RequestCubit extends Cubit<RequestStates> {
     'Grey'
   ];
   String selectedColor = 'Red';
+
+  List<String> goodWith =[
+    "PET FRIENDLY",
+    "KID FRIENDLY",
+    "DISABLED"
+  ];
+      String selectedGood = 'PET FRIENDLY';
+
 
 
 }

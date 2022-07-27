@@ -5,6 +5,8 @@ import 'package:orange/repositories/end_point.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/view_models/register_cubit/states.dart';
 
+import '../../repositories/constants.dart';
+
 
 class RegisterCubit extends Cubit<RegisterStates>
 {
@@ -64,6 +66,13 @@ class RegisterCubit extends Cubit<RegisterStates>
     inPassword= !inPassword;
     suffx =inPassword? Icons.visibility_outlined:Icons.visibility_off_outlined;
     emit(ChangePasswordV2State());
+  }
+  void changeScreen(int currentIndex)
+  {
+
+    index=currentIndex;
+
+    emit(RegisterChangeScreenState());
   }
 
 

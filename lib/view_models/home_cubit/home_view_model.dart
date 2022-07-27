@@ -53,7 +53,6 @@ class HomeViewModelCubit extends Cubit<HomeViewModelState> {
   }
 
 
-  int index = 0;
 
   void changeScreen(int currentIndex)
   {

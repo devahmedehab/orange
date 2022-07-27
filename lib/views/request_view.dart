@@ -21,13 +21,16 @@ class _RequestViewState extends State<RequestView> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery
+        .of(context)
+        .size;
+    return BlocConsumer<RequestCubit, RequestStates>(
+      listener: (BuildContext context, state) {
 
-    Size size = MediaQuery.of(context).size;
-    return BlocConsumer<RequestCubit,RequestStates>(
-      listener: (BuildContext context, state) {  },
-      builder: (BuildContext context, Object? state)
-      {
-        var cubit=RequestCubit.get(context);
+      },
+      builder: (BuildContext context, Object? state) {
+        var model= RequestCubit.get(context);
+        var cubit = RequestCubit.get(context);
         return Padding(
           padding: EdgeInsets.only(top: size.height * .1),
           child: SingleChildScrollView(
@@ -73,7 +76,8 @@ class _RequestViewState extends State<RequestView> {
                           ),
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height * .08),
+                                padding: EdgeInsets.only(
+                                    top: size.height * .08),
                                 child: Text(
                                   'Request',
                                   style: TextStyle(
@@ -84,9 +88,11 @@ class _RequestViewState extends State<RequestView> {
                           ),
                           Center(
                             child: Padding(
-                              padding: EdgeInsets.only(top: size.height * .00001),
+                              padding: EdgeInsets.only(
+                                  top: size.height * .00001),
                               child: Image(
-                                image: AssetImage('assets/images/requestDog.png'),
+                                image: AssetImage(
+                                    'assets/images/requestDog.png'),
                                 height: 600,
                                 width: 600,
                               ),
@@ -102,7 +108,8 @@ class _RequestViewState extends State<RequestView> {
                                 width: size.width * .4,
                                 controller: nameController,
                                 type: TextInputType.name,
-                                validate: () => (String? value) {
+                                validate: () =>
+                                    (String? value) {
                                   if (value!.isEmpty) {
                                     return 'First Name Must not be Empty';
                                   }
@@ -114,8 +121,8 @@ class _RequestViewState extends State<RequestView> {
                             child: Padding(
                               padding: EdgeInsets.only(top: size.height * .84),
                               child: myDropdown(
-                                  height:  size.height * .1,
-                                  width:  size.width * .4,
+                                  height: size.height * .1,
+                                  width: size.width * .4,
                                   dropItems: cubit.categories,
                                   selectedItem: cubit.selectedCategory,
                                   hintText: 'Category'
@@ -124,22 +131,23 @@ class _RequestViewState extends State<RequestView> {
                           ),
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height * .98),
-                                child:Row(
+                                padding: EdgeInsets.only(
+                                    top: size.height * .98),
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children:
                                   [
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
-                                        dropItems:  cubit.years,
-                                        selectedItem:  cubit.selectedYear,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
+                                        dropItems: cubit.years,
+                                        selectedItem: cubit.selectedYear,
                                         hintText: 'Year'
                                     ),
                                     SizedBox(width: 20,),
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.months,
                                         selectedItem: cubit.selectedMonth,
                                         hintText: 'Months'
@@ -151,24 +159,25 @@ class _RequestViewState extends State<RequestView> {
                           ),
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height *1.1),
-                                child:Row(
+                                padding: EdgeInsets.only(
+                                    top: size.height * 1.1),
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children:
                                   [
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.sizes,
                                         selectedItem: cubit.selectedSize,
                                         hintText: 'Size'
                                     ),
                                     SizedBox(width: 20,),
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.breeds,
-                                        selectedItem:cubit.selectedBreed,
+                                        selectedItem: cubit.selectedBreed,
                                         hintText: 'Breed'
                                     ),
 
@@ -178,24 +187,25 @@ class _RequestViewState extends State<RequestView> {
                           ),
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height *1.22),
-                                child:Row(
+                                padding: EdgeInsets.only(
+                                    top: size.height * 1.22),
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children:
                                   [
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.genders,
-                                        selectedItem:cubit.selectedGender,
+                                        selectedItem: cubit.selectedGender,
                                         hintText: 'Gender'
                                     ),
                                     SizedBox(width: 20,),
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.breeds,
-                                        selectedItem:cubit.selectedBreed,
+                                        selectedItem: cubit.selectedBreed,
                                         hintText: 'Breed'
                                     ),
 
@@ -205,24 +215,25 @@ class _RequestViewState extends State<RequestView> {
                           ),
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height *1.34),
-                                child:Row(
+                                padding: EdgeInsets.only(
+                                    top: size.height * 1.34),
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children:
                                   [
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.hairLengths,
-                                        selectedItem:cubit.selectedHairLength,
+                                        selectedItem: cubit.selectedHairLength,
                                         hintText: 'Hair Length'
                                     ),
                                     SizedBox(width: 20,),
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.behaviours,
-                                        selectedItem:cubit.selectedBehaviour,
+                                        selectedItem: cubit.selectedBehaviour,
                                         hintText: 'Care & behavior'
                                     ),
 
@@ -232,22 +243,24 @@ class _RequestViewState extends State<RequestView> {
                           ),
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height *1.46),
-                                child:Row(
+                                padding: EdgeInsets.only(
+                                    top: size.height * 1.46),
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children:
                                   [
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.houseTrained,
-                                        selectedItem: cubit.selectedHouseTrained,
+                                        selectedItem: cubit
+                                            .selectedHouseTrained,
                                         hintText: 'House Trained'
                                     ),
                                     SizedBox(width: 20,),
                                     myDropdown(
-                                        height:  size.height * .1,
-                                        width:  size.width * .192,
+                                        height: size.height * .1,
+                                        width: size.width * .192,
                                         dropItems: cubit.colors,
                                         selectedItem: cubit.selectedColor,
                                         hintText: 'Color'
@@ -260,8 +273,9 @@ class _RequestViewState extends State<RequestView> {
                           // Detect your current location
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height *1.6,right: size.width*.22),
-                                child:Text(
+                                padding: EdgeInsets.only(top: size.height * 1.6,
+                                    right: size.width * .22),
+                                child: Text(
                                   'Detect your current location',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -273,7 +287,7 @@ class _RequestViewState extends State<RequestView> {
                           //Location
                           Center(
                             child: Padding(
-                              padding: EdgeInsets.only(top: size.height *1.66),
+                              padding: EdgeInsets.only(top: size.height * 1.66),
                               child: defaultFormField(
                                 suffix: Icons.location_on,
                                 textColor: HexColor('#A69994'),
@@ -282,7 +296,8 @@ class _RequestViewState extends State<RequestView> {
                                 width: size.width * .4,
                                 controller: locationController,
                                 type: TextInputType.name,
-                                validate: () => (String? value) {
+                                validate: () =>
+                                    (String? value) {
                                   if (value!.isEmpty) {
                                     return 'Location Must not be Empty';
                                   }
@@ -293,7 +308,7 @@ class _RequestViewState extends State<RequestView> {
                           //phone
                           Center(
                             child: Padding(
-                              padding: EdgeInsets.only(top: size.height *1.78),
+                              padding: EdgeInsets.only(top: size.height * 1.78),
                               child: defaultFormField(
                                 textColor: HexColor('#A69994'),
                                 label: 'Phone Number',
@@ -301,7 +316,8 @@ class _RequestViewState extends State<RequestView> {
                                 width: size.width * .4,
                                 controller: phoneController,
                                 type: TextInputType.name,
-                                validate: () => (String? value) {
+                                validate: () =>
+                                    (String? value) {
                                   if (value!.isEmpty) {
                                     return 'Phone number Must not be Empty';
                                   }
@@ -312,7 +328,7 @@ class _RequestViewState extends State<RequestView> {
                           //Description
                           Center(
                             child: Padding(
-                              padding: EdgeInsets.only(top: size.height *1.9),
+                              padding: EdgeInsets.only(top: size.height * 1.9),
                               child: defaultFormField(
                                 textColor: HexColor('#A69994'),
                                 label: 'Description',
@@ -320,7 +336,8 @@ class _RequestViewState extends State<RequestView> {
                                 width: size.width * .4,
                                 controller: descriptionController,
                                 type: TextInputType.name,
-                                validate: () => (String? value) {
+                                validate: () =>
+                                    (String? value) {
                                   if (value!.isEmpty) {
                                     return 'Phone number Must not be Empty';
                                   }
@@ -331,8 +348,10 @@ class _RequestViewState extends State<RequestView> {
                           //text vaccinated (up to date)
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top: size.height *2.25,right: size.width*.25),
-                                child:Text(
+                                padding: EdgeInsets.only(
+                                    top: size.height * 2.25,
+                                    right: size.width * .25),
+                                child: Text(
                                   'vaccinated (up to date)',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -344,11 +363,23 @@ class _RequestViewState extends State<RequestView> {
                           //Send Button
                           Center(
                             child: Padding(
-                                padding: EdgeInsets.only(top:size.height*2.38),
+                                padding: EdgeInsets.only(
+                                    top: size.height * 2.38),
                                 child: myDefaultButton(
-                                    height: size.height*.11,
-                                    width: size.width*.4,
-                                    onPressed: (){},
+                                    height: size.height * .11,
+                                    width: size.width * .4,
+                                    onPressed: () {
+                                      RequestCubit.get(context).dogData(
+                                        breed: model.selectedBreed ,
+                                        age: model.selectedYear ,
+                                        size: model.selectedSize,
+                                        goodWith: model.selectedGood,
+                                        gender: model.selectedGender,
+                                        color: model.selectedColor,
+                                        hairLength: model.selectedHairLength,
+                                        behaviour: model.selectedBehaviour,
+                                      );
+                                    },
                                     text: 'Send'
                                 )
                             ),

@@ -24,20 +24,6 @@ class RegisterErrorState extends RegisterStates
 class ChangePasswordVState extends RegisterStates {}
 class ChangePasswordV2State extends RegisterStates {}
 
-class SendOTPLoadingState extends RegisterStates {}
+class RegisterChangeScreenState extends RegisterStates{}
 
-class SendOTPSuccessState extends RegisterStates
-{
-  final LoginModel loginModel;
-
-  SendOTPSuccessState(this.loginModel);
-
-}
-
-class SendOTPErrorState extends RegisterStates
-{
-  final String error;
-
-  SendOTPErrorState(this.error);
-}
 

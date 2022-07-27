@@ -25,41 +25,7 @@ class LoginErrorState extends LoginStates
 class ChangePasswordV1State extends LoginStates {}
 class ChangePasswordV2State extends LoginStates {}
 class ChangePasswordV3State extends LoginStates {}
-
-
-class ChangePasswordLoadingState extends LoginStates {}
-
-
-class ChangePasswordSuccessState extends LoginStates {
-
-/*  final LoginModel passwordModel;
-
-  ChangePasswordSuccessState(this.passwordModel);*/
-}
-
-class ChangePasswordErrorState extends LoginStates {
-
-  final String error;
-
-  ChangePasswordErrorState(this.error);
-}
-class NewPasswordLoadingState extends LoginStates {}
-
-
-class NewPasswordSuccessState extends LoginStates {
-/*
-  final LoginModel passwordModel;
-
-  NewPasswordSuccessState(this.passwordModel);*/
-}
-
-class NewPasswordErrorState extends LoginStates {
-
-  final String error;
-
-  NewPasswordErrorState(this.error);
-}
-
+class LoginChangeScreenState extends LoginStates{}
 
 
 

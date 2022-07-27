@@ -6,6 +6,7 @@ import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/view_models/register_cubit/cubit.dart';
 import 'package:orange/view_models/register_cubit/states.dart';
+import 'package:orange/views/home_view.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({Key? key}) : super(key: key);
@@ -36,10 +37,13 @@ class _SignUpViewState extends State<SignUpView> {
         if (state is RegisterSuccessState) {
           if (state.loginModel.accessToken != null) {
             CacheHelper.saveData(
-                    key: 'email', value: state.loginModel.accessToken)
+                    key: 'accessToken', value: state.loginModel.accessToken)
                 .then((value) {
               token = state.loginModel.accessToken!;
             });
+            RegisterCubit.get(context).changeScreen(0);
+            navigateAndEnd(context, HomeView());
+
           }
         }
       },
