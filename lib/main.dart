@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
             create: (context) =>
-            AboutUsCubit()..getAboutData()
+            AboutUsCubit()..getAboutData()..changeScreen(index)
         ),
       ],
       child: MaterialApp(

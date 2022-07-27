@@ -196,7 +196,7 @@ class _AboutUSViewState extends State<AboutUSView> {
                  ),
                ],
              ),
-             Container(
+         /*    Container(
                width: size.width,
                height: size.height*.9,
                color: Colors.white,
@@ -210,12 +210,38 @@ class _AboutUSViewState extends State<AboutUSView> {
                          color: Colors.black
                      ),
                    ),
+                   Container(
+                     width: size.width*.2,
+                     height: size.height*.3,
+                     child: Card(
+                       color: Color(0xffeaeaea),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(15),
+                       ),
+                       child: Padding(
+                         padding: const EdgeInsets.symmetric(horizontal: 5,),
+                         child: Column(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             myDefaultButton(
+                                 onPressed: (){
+                                   AboutUsCubit.get(context).changeScreen(6);
+                                 },
+                               text: 'See more'
 
 
+
+                             )
+
+                           ],
+                         ),
+                       )
+                     ),
+                   )
 
                  ],
                ),
-             ),
+             ),*/
 
 
            ],
