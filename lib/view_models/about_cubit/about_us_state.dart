@@ -8,6 +8,7 @@ class AboutUsLoadingState extends AboutUsState {}
 class AboutUsSuccessState extends AboutUsState {
   final AboutsModel aboutsModel;
 
+
   AboutUsSuccessState(this.aboutsModel);
 }
 class AboutUsErrorState extends AboutUsState {
