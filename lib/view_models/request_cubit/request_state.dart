@@ -19,6 +19,8 @@ class RequestErrorState extends RequestStates{
 }
 class RequestChangeScreenState extends RequestStates{}
 
+class CheckBoxChangeState extends RequestStates{}
+
 
 
 

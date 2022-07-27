@@ -155,6 +155,14 @@ class RequestCubit extends Cubit<RequestStates> {
   ];
       String selectedGood = 'PET FRIENDLY';
 
+  bool checkValue=false;
+  void changeCheckBoxValue(){
+
+    checkValue=!checkValue;
+    emit(CheckBoxChangeState());
+
+  }
+
 
   void changeScreen(int currentIndex)
   {
