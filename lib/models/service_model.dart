@@ -16,10 +16,10 @@ class ServiceModel {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['categoryId'] = this.categoryId;
-    data['imageBase64'] = this.imageBase64;
-    data['location'] = this.location;
-    data['phoneNumber'] = this.phoneNumber;
+    data['categoryId'] = categoryId;
+    data['imageBase64'] = imageBase64;
+    data['location'] = location;
+    data['phoneNumber'] = phoneNumber;
     return data;
   }
 }
