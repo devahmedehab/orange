@@ -1,11 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:orange/models/pets_controller_create_model.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/view_models/request_cubit/request_state.dart';
-
-import '../../models/send_filter_model.dart';
 import '../../repositories/constants.dart';
 import '../../repositories/end_point.dart';
-import '../login_cubit/login_states.dart';
 
 
 
