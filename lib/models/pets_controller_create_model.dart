@@ -1,7 +1,23 @@
 class PetsModel {
-  int? id;
+  Pet? pet;
+
+  PetsModel({this.pet});
+
+  PetsModel.fromJson(Map<String, dynamic> json) {
+    pet = json['pet'] != null ? new Pet.fromJson(json['pet']) : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (pet != null) {
+      data['pet'] = pet!.toJson();
+    }
+    return data;
+  }
+}
+
+class Pet {
   String? name;
-  List<String>? image;
   int? year;
   int? month;
   String? size;
@@ -16,14 +32,10 @@ class PetsModel {
   String? phone;
   bool? vaccinated;
   int? categoryId;
-  int? userId;
-  User? user;
-  String? category;
+  List<String>? image;
 
-  PetsModel(
-      {this.id,
-        this.name,
-        this.image,
+  Pet(
+      {this.name,
         this.year,
         this.month,
         this.size,
@@ -38,14 +50,10 @@ class PetsModel {
         this.phone,
         this.vaccinated,
         this.categoryId,
-        this.userId,
-        this.user,
-        this.category});
+        this.image});
 
-  PetsModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+  Pet.fromJson(Map<String, dynamic> json) {
     name = json['name'];
-    image = json['image'].cast<String>();
     year = json['year'];
     month = json['month'];
     size = json['size'];
@@ -60,16 +68,12 @@ class PetsModel {
     phone = json['phone'];
     vaccinated = json['vaccinated'];
     categoryId = json['categoryId'];
-    userId = json['userId'];
-    user = json['user'] != null ? User.fromJson(json['user']) : null;
-    category = json['category'];
+    image = json['image'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['id'] = id;
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['name'] = name;
-    data['image'] = image;
     data['year'] = year;
     data['month'] = month;
     data['size'] = size;
@@ -84,30 +88,7 @@ class PetsModel {
     data['phone'] = phone;
     data['vaccinated'] = vaccinated;
     data['categoryId'] = categoryId;
-    data['userId'] = userId;
-    if (user != null) {
-      data['user'] = user!.toJson();
-    }
-    data['category'] = category;
-    return data;
-  }
-}
-
-class User {
-  String? firstName;
-  String? lastName;
-
-  User({this.firstName, this.lastName});
-
-  User.fromJson(Map<String, dynamic> json) {
-    firstName = json['firstName'];
-    lastName = json['lastName'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['firstName'] = firstName;
-    data['lastName'] = lastName;
+    data['image'] = image;
     return data;
   }
 }
