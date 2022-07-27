@@ -383,13 +383,16 @@ class _RequestViewState extends State<RequestView> {
                                         name: nameController.text,
                                         category: model.selectedCategory,
                                         breed: model.selectedBreed ,
-                                        age: model.selectedYear ,
+                                        year: model.selectedYear ,
                                         size: model.selectedSize,
                                         goodWith: model.selectedGood,
                                         gender: model.selectedGender,
                                         color: model.selectedColors,
                                         hairLength: model.selectedHairLength,
-                                        behaviour: model.selectedBehaviour,
+                                        careBehavior: model.selectedBehaviour,
+                                        location: locationController.text,
+                                        month: model.selectedMonth,
+                                        houseTrained: model.selectedHouseTrained,
                                       );
                                     },
                                     text: 'Send'
