@@ -70,7 +70,7 @@ class _HomeViewState extends State<HomeView> {
                       ])
               ),
               child: Padding(
-                padding:  EdgeInsets.all(20.0),
+                padding:  const EdgeInsets.all(20.0),
                 child: Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,

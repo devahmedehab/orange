@@ -10,7 +10,6 @@ class AdaptionScreen extends StatelessWidget {
 
       child: Column(
         children: [
-          NavigationBarWidget(),
           DecorationStyle(),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -29,6 +28,8 @@ class AdaptionScreen extends StatelessWidget {
 
 
 class DecorationStyle extends StatelessWidget {
+  const DecorationStyle({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     var adaptionContentSize = MediaQuery.of(context).size;
