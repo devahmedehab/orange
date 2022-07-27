@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/component.dart';
+
 
 class AdaptionScreen extends StatelessWidget {
   @override
@@ -19,7 +19,6 @@ class AdaptionScreen extends StatelessWidget {
               ],
             ),
           ),
-          FooterWidget(),
         ],
       ),
     );
@@ -28,8 +27,6 @@ class AdaptionScreen extends StatelessWidget {
 
 
 class DecorationStyle extends StatelessWidget {
-  const DecorationStyle({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     var adaptionContentSize = MediaQuery.of(context).size;
@@ -76,18 +73,34 @@ class AdaptionContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(
+          height: 15,
+        ),
         Text(
-          "How you feed Your Dog?\n\n"
-          "As a general rule, puppies and young dogs burn more calories, so they \nneed a greater quantity of food that is higher in protein and fat. Older, less \nactive dogs require fewer calories to remain healthy.\n\n"
-          "Richard H. Pitcairn, DVM, PhD, author of Dr. Pitcairn’s Complete Guide to \nNatural Health for Dogs and Cats, believes the most reliable approach is to \nfeed what seems to be a reasonable amount and monitor his body weight.\n\n"
-          "You should be able to feel your pet’s ribs easily as you slide your hand \nover his sides,” Pitcairn says. “If you can’t, he’s probably too heavy, so \nbegin to feed a smaller quantity.\n\n"
-          "If you’re using a commercial pet food, beware of the “feeding guidelines” on the bag or box.\nIt lists different weights and the corresponding amount of food to feed your dog to maintain that weight,\nand should be used only as a rough guideline.\n\n""Starting at the low end of the suggested guidelines and then monitoring your dog for hunger and \nbody condition is a good way to proceed.\nDifferent Portions for Different Pooches Though it may sound counterintuitive, as a general rule, \n\n ",
+          'How you feed Your Dog?',
           style: TextStyle(
+              color: HexColor("492F24"),
+              fontSize: 25,
+              fontWeight: FontWeight.bold
+          ),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Text(
 
+          "As a general rule, puppies and young dogs burn more calories, so they \nneed a greater quantity of food that is higher in protein and fat. Older, less \nactive dogs require fewer calories to remain healthy.\n\n"
+              "Richard H. Pitcairn, DVM, PhD, author of Dr. Pitcairn’s Complete Guide to \nNatural Health for Dogs and Cats, believes the most reliable approach is to \nfeed what seems to be a reasonable amount and monitor his body weight.\n\n"
+              "You should be able to feel your pet’s ribs easily as you slide your hand \nover his sides,” Pitcairn says. “If you can’t, he’s probably too heavy, so \nbegin to feed a smaller quantity.\n\n"
+              "If you’re using a commercial pet food, beware of the “feeding guidelines” on the bag or box.\nIt lists different weights and the corresponding amount of food to feed your dog to maintain that weight,\nand should be used only as a rough guideline.\n\n"
+              "Starting at the low end of the suggested guidelines and then monitoring your dog for hunger and \nbody condition is a good way to proceed.\nDifferent Portions for Different Pooches Though it may sound counterintuitive, as a general rule, \n\n ",
+          style: TextStyle(
             color: HexColor("492F24"),
+            fontSize: 20,
 
-            fontSize: 25,
+
           ),
 
         ),

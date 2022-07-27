@@ -8,7 +8,9 @@ import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/view_models/home_cubit/home_view_model.dart';
 import 'package:orange/view_models/login_cubit/login_cubit.dart';
 import 'package:orange/view_models/register_cubit/cubit.dart';
+import 'package:orange/view_models/request_cubit/request_cubit.dart';
 import 'package:orange/views/home_view.dart';
+import 'package:orange/views/request_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 void main() async{
@@ -47,6 +49,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 HomeViewModelCubit()..getFooterData()
+        ),
+        BlocProvider(
+            create: (context) =>
+            RequestCubit()
         ),
       ],
       child: MaterialApp(

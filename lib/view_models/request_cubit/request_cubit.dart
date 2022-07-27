@@ -53,4 +53,79 @@ class RequestCubit extends Cubit<RequestStates> {
   }
 
 
+  List<String> categories = ['Dogs', 'Cats'];
+  String selectedCategory = 'Dogs';
+
+  List<String> years = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12'
+  ];
+  String selectedYear = '1';
+
+  List<String> months = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12'
+  ];
+  String selectedMonth = '1';
+
+  List<String> sizes = ['Small', 'Medium', 'Large'];
+  String selectedSize = 'Small';
+
+  List<String> breeds = [
+    'Dogo',
+    'German',
+    'Shepherd',
+    'Great Dane',
+    'Kangal',
+    'Pitbull'
+  ];
+  String selectedBreed = 'German';
+
+  List<String> genders = ['Male', 'Female'];
+  String selectedGender = 'Male';
+
+  List<String> hairLengths = ['Short', 'Medium', 'Tall'];
+  String selectedHairLength = 'Short';
+
+  List<String> behaviours = ['Outgoing', 'Shy', 'Bounded Pair', 'Blind'];
+  String selectedBehaviour = 'Shy';
+
+  List<String> houseTrained = ['Yes', 'No'];
+  String selectedHouseTrained = 'Yes';
+
+  List<String> colors = [
+    'Brown',
+    'Dark chocolate',
+    'Red',
+    'Golden',
+    'Yellow',
+    'Cream',
+    'Blue',
+    'Kerry',
+    'Blue',
+    'Grey'
+  ];
+  String selectedColor = 'Red';
+
+
 }

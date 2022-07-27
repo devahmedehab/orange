@@ -4,7 +4,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
 import 'package:orange/view_models/home_cubit/HomeViewModelState.dart';
 import 'package:orange/view_models/home_cubit/home_view_model.dart';
-import 'package:orange/views/adaption_view.dart';
+import 'package:orange/views/adaption.dart';
 import 'package:orange/views/request_view.dart';
 import 'package:orange/views/services_view.dart';
 import 'package:orange/views/sign_up_view.dart';
@@ -53,7 +53,6 @@ class _HomeViewState extends State<HomeView> {
         locationController.text = model.location as String;
         location2Controller.text = model.location2 as String;
         phoneController.text=model.phone as String;
-        // HomeViewModelCubit.get(context).getFooterData();
       },
       builder: (BuildContext context, Object? state) {
         return Scaffold(
@@ -100,7 +99,7 @@ class _HomeViewState extends State<HomeView> {
                           hoverFunction:(value)=>setState(() {
                             isHover[1]=value;
                           }),
-                          text: 'Categories',
+                          text: 'Adaption',
                           onTap:(){
 
                             setState(() {

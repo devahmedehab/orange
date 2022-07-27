@@ -23,7 +23,7 @@ class HomeViewModelCubit extends Cubit<HomeViewModelState> {
 
   List<Widget> screens = [
     AboutUSView(),
-    AdaptionView(),
+    AdaptionScreen(),
     HelpYourFriendScreen(),
     RequestView(),
     SignUpView(),
