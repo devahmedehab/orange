@@ -34,8 +34,8 @@ class _RequestViewState extends State<RequestView> {
             Padding(
               padding: EdgeInsets.only(
                   left: size.width * .6, top: size.height * .28),
-              child: Image(
-                image: AssetImage(
+               child: Image(
+                image: const AssetImage(
                   'assets/images/Icon material-p (2).png',
                 ),
                 height: size.width * .5,
@@ -45,7 +45,7 @@ class _RequestViewState extends State<RequestView> {
             Padding(
               padding: EdgeInsets.only(left: size.width * .13),
               child: Image(
-                image: AssetImage(
+                image: const AssetImage(
                   'assets/images/Icon material-p (2).png',
                 ),
                 height: size.width * .5,
@@ -83,7 +83,7 @@ class _RequestViewState extends State<RequestView> {
                       Center(
                         child: Padding(
                           padding: EdgeInsets.only(top: size.height * .00001),
-                          child: Image(
+                          child: const Image(
                             image: AssetImage('assets/images/requestDog.png'),
                             height: 600,
                             width: 600,
@@ -334,7 +334,7 @@ class _RequestViewState extends State<RequestView> {
                     ],
                   ),
                 ),
-                SizedBox(height: 100,)
+                const SizedBox(height: 100,)
               ],
             ),
           ],
