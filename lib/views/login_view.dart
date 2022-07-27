@@ -152,7 +152,8 @@ class _LoginViewState extends State<LoginView> {
                                     {
                                       LoginCubit.get(context).userLogin(
                                         email: emailController.text,
-                                        password: passwordController.text,);
+                                        password: passwordController.text,
+                                      );
 
 
 
@@ -168,7 +169,6 @@ class _LoginViewState extends State<LoginView> {
                               padding: EdgeInsets.only(top:size.height,left: size.width*.28),
                               child:myDefaultTextButton(text: 'Forget Password?',
                                   onPressed:(){
-                                print('ahaa');
                                   })
 
                           ),

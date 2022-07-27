@@ -189,6 +189,100 @@ class _AboutUSViewState extends State<AboutUSView> {
                 ),
               ],
             ),
+            Stack(
+
+              children: [
+                Container(
+                  height: size.height * 0.6,
+                  width: size.width,
+                  color: Colors.grey[200],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left:size.width*.38,top:20 ),
+                  child: Text(
+                    'Let\'s get this right .....',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                        color: Colors.black),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left:size.width*.35,top:90 ),
+                  child: Text(
+                    'What kind of friend you looking for?',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 30,
+                        color: Colors.black),
+                  ),
+                ),
+                //cat
+                InkWell(
+                  onTap: (){},
+                  child: Padding(
+                    padding: EdgeInsets.only(left:size.width*.37,top:200 ),
+                    child: Container(
+                        height:150 ,
+                        width:150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color:HexColor('#492F24'),width:2),
+
+                        ),
+                        child: Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(18.0),
+                              child: Image(image: AssetImage('assets/images/caty.png',),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 50.0,top: 120),
+                              child: Text('Cats',style: TextStyle(fontSize: 20),),
+                            ),
+
+                          ],
+                        )),
+                  ),
+                ),
+                //dog
+                InkWell(
+                  onTap: (){},
+                  child: Padding(
+                    padding: EdgeInsets.only(left:size.width*.52,top:200 ),
+                    child: Container(
+                        height:150 ,
+                        width:150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color:HexColor('#492F24'),width:2),
+
+                        ),
+                        child: Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(18.0),
+                              child: Image(image: AssetImage('assets/images/dogy.png',),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 50.0,top: 120),
+                              child: Text('Dogs',style: TextStyle(fontSize: 20),),
+                            ),
+
+                          ],
+                        )),
+                  ),
+                ),
+
+
+
+
+
+
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

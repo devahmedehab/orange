@@ -291,37 +291,6 @@ class _SignUpViewState extends State<SignUpView> {
                             ),
                           ),
 
-
-
-
-                        /*  Center(
-                            child: Padding(
-                              padding: EdgeInsets.only(top: size.height * .898,left: size.width * .29),
-                              child: Container(
-
-                                child: DropdownButton<String>(
-                                  value: dropdownValue,
-                                  elevation: 16,
-                                  style: const TextStyle(color: Colors.deepPurple),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      dropdownValue = newValue!;
-                                    });
-                                  },
-                                  items: <String>['One', 'Two', 'Free', 'Four']
-                                      .map<DropdownMenuItem<String>>((String value) {
-                                    return DropdownMenuItem<String>(
-
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
-
-
-                                ),
-                              ),
-                            ),
-                          ),*/
                           Center(
                             child: Padding(
                                 padding:
