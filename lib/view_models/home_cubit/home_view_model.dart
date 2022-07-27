@@ -15,7 +15,9 @@ import 'HomeViewModelState.dart';
 class HomeViewModelCubit extends Cubit<HomeViewModelState> {
   HomeViewModelCubit() : super(HomeViewModelInitial());
 
+
   static HomeViewModelCubit get(context) => BlocProvider.of(context);
+
 
   var isHover = [false, false, false, false, false, false];
 

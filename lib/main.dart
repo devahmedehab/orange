@@ -12,6 +12,7 @@ import 'package:orange/views/home_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 void main() async{
+
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
     if (kReleaseMode) exit(1);

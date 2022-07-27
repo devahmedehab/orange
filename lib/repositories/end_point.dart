@@ -8,7 +8,7 @@ const FOOTER='/static/homepage/footer';
 
 const REGISTER='/auth/register';
 
-const UPDATE_PROFILE='users/update-profile';
+const CREATE='/pets';
 
 const Verify_Pass='users/verify-pass-otp';
 
