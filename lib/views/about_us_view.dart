@@ -16,6 +16,7 @@ class _AboutUSViewState extends State<AboutUSView> {
     var titleController=TextEditingController();
     var bodyController=TextEditingController();
 
+
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     var size = MediaQuery.of(context).size;
@@ -58,10 +59,10 @@ class _AboutUSViewState extends State<AboutUSView> {
                            padding: EdgeInsets.only(left: size.width * .05),
                            child: Stack(
                              children: [
-                                Padding(
+                       const          Padding(
                                  padding: EdgeInsets.all(15.0),
                                  child: Text(
-                                   titleController.text,
+                                   'Not only people\nneed a house',
                                    style: TextStyle(
                                        fontWeight: FontWeight.bold,
                                        fontSize: 40,
@@ -74,8 +75,18 @@ class _AboutUSViewState extends State<AboutUSView> {
                                  child: Container(
                                    width: size.width * .26,
                                    height: size.height * .6,
-                                   child:  Text(
-                                     bodyController.text ,
+                                   child: const Text(
+                                     'Lorem ipsum dolor sit amet,'
+                                         ' consetetur sadipscing elitr,'
+                                         ' sed diam nonumy eirmod tempor invidunt ut labore et'
+                                         ' dolore magna aliquyam erat, sed diam voluptua.'
+                                         ' At vero eos et accusam et justo duo dolores et ea rebum.'
+                                         ' Stet clita kasd gubergren,'
+                                         ' no sea takimata sanctus est'
+                                         ' Lorem ipsum dolor sit amet.'
+                                         ' Lorem ipsum dolor sit amet,'
+                                         ' consetetur sadipscing elitr,'
+                                         ' sed diam nonumy.',
                                      style: TextStyle(
                                        fontSize: 18,
                                        color: Colors.white,
@@ -147,11 +158,11 @@ class _AboutUSViewState extends State<AboutUSView> {
                              padding: EdgeInsets.only(left: size.width * .05),
                              child: Stack(
                                children: [
-                                 const Padding(
+                                  Padding(
                                    padding: EdgeInsets.all(15.0),
                                    child: Text(
-                                     'About Petology ',
-                                     style: TextStyle(
+                                     titleController.text,
+                                     style: const TextStyle(
                                          fontWeight: FontWeight.bold,
                                          fontSize: 40,
                                          color: Colors.black),
@@ -163,12 +174,8 @@ class _AboutUSViewState extends State<AboutUSView> {
                                    child: Container(
                                      width: size.width * .26,
                                      height: size.height * .6,
-                                     child: const Text(
-                                       'Lorem ipsum dolor sit amet,'
-                                           ' consetetur sadipscing elitr,'
-                                           ' sed diam nonumy eirmod tempor invidunt'
-                                           ' ut labore et dolore magna aliquyam erat, '
-                                           'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+                                     child:  Text(
+                                      bodyController.text ,
                                        style: TextStyle(
                                          fontSize: 18,
                                          color: Colors.black,
