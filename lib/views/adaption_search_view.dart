@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/component.dart';
-import 'package:orange/repositories/constants.dart';
+import 'package:orange/repositories/component/constants.dart';
 import 'package:orange/repositories/grid_view_component/grid_view_item.dart';
 import 'package:orange/view_models/adaption_cubit/adaption_state.dart';
 
+import '../repositories/component/component.dart';
 import '../view_models/adaption_cubit/adaption_cubit.dart';
 
 class AdaptionSearchView extends StatelessWidget {

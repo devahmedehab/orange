@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/component.dart';
-import 'package:orange/view_models/home_cubit/HomeViewModelState.dart';
-import 'package:orange/view_models/home_cubit/home_view_model.dart';
+import 'package:orange/view_models/home_cubit/HomeState.dart';
+import 'package:orange/view_models/home_cubit/home_cubit.dart';
 import 'package:orange/views/adaption.dart';
 import 'package:orange/views/request_view.dart';
 import 'package:orange/views/services_view.dart';
 import 'package:orange/views/sign_up_view.dart';
+import '../repositories/component/component.dart';
 import 'about_us_view.dart';
 import 'adaption_search_view.dart';
 import 'login_view.dart';
@@ -46,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
 
-    return BlocConsumer<HomeCubit,HomeViewModelState>(
+    return BlocConsumer<HomeCubit,HomeState>(
       listener: (BuildContext context, state) {
 
         var model = HomeCubit.get(context).footerModel;

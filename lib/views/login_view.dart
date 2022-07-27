@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/component.dart';
-import 'package:orange/repositories/constants.dart';
+import 'package:orange/repositories/component/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/view_models/login_cubit/login_states.dart';
 
 import 'package:orange/views/about_us_view.dart';
 
+import '../repositories/component/component.dart';
 import '../view_models/login_cubit/login_cubit.dart';
 
 class LoginView extends StatefulWidget {

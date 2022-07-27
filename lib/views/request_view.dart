@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/component.dart';
 import 'package:orange/views/home_view.dart';
 
+import '../repositories/component/component.dart';
 import '../view_models/request_cubit/request_cubit.dart';
 import '../view_models/request_cubit/request_state.dart';
 

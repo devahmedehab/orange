@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/models/login_model.dart';
-import 'package:orange/repositories/constants.dart';
+import 'package:orange/repositories/component/constants.dart';
 import 'package:orange/repositories/end_point.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/models/filter_grid_model.dart';
-import 'package:orange/repositories/constants.dart';
+import 'package:orange/repositories/component/constants.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 
 import 'adaption_state.dart';

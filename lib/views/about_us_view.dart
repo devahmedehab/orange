@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/component.dart';
+import '../repositories/component/component.dart';
 import '../repositories/grid_view_component/grid_view_item.dart';
 import '../view_models/about_cubit/about_us_cubit.dart';
 
@@ -23,12 +23,12 @@ class _AboutUSViewState extends State<AboutUSView> {
 
     return BlocConsumer<AboutUsCubit, AboutUsState>(
       listener: (context, state) {
-        if (state is AboutUsSuccessState) {
+
           var model = AboutUsCubit.get(context).aboutsModel;
 
           titleController.text = model.title as String;
           bodyController.text = model.body as String;
-        }
+
       },
       builder: (context, state) {
         return Column(

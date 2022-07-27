@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/component.dart';
-import 'package:orange/repositories/constants.dart';
+import '../repositories/component/component.dart';
+import 'package:orange/repositories/component/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/view_models/register_cubit/register_cubit.dart';
 import 'package:orange/view_models/register_cubit/register_states.dart';

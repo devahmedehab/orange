@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import '../repositories/button_custom/ButtonCustom.dart';
-import '../repositories/component.dart';
+import '../repositories/component/component.dart';
+import '../repositories/component/constants.dart';
 import '../view_models/services_view_model/services_cubit.dart';
 import '../view_models/services_view_model/services_state.dart';
 

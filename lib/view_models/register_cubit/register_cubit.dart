@@ -5,7 +5,7 @@ import 'package:orange/repositories/end_point.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/view_models/register_cubit/register_states.dart';
 
-import '../../repositories/constants.dart';
+import '../../repositories/component/constants.dart';
 
 
 class RegisterCubit extends Cubit<RegisterStates>
