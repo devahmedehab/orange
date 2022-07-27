@@ -2,9 +2,12 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/button_custom/ButtonCustom.dart';
 import 'package:orange/repositories/component.dart';
+
+import '../view_models/about_us_cubit.dart';
 
 
 class AboutUSView extends StatefulWidget {
@@ -18,263 +21,270 @@ class _AboutUSViewState extends State<AboutUSView> {
     var size = MediaQuery.of(context).size;
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    return Column(
-      children: [
-        Stack(
-          children: [
-            Container(
-              height: size.height * 0.7,
-              width: size.width,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.topLeft,
-                      colors: [
-                        HexColor('#180701'),
-                        HexColor('#654538'),
-                      ])),
-            ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: size.width * .05),
-                      child: Stack(
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.all(15.0),
-                            child: Text(
-                              'Not only people\nneed a house',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 40,
-                                  color: Colors.white),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                                top: size.height * .2, left: size.width * .01),
-                            child: Container(
-                              width: size.width * .26,
-                              height: size.height * .6,
-                              child: const Text(
-                                'Lorem ipsum dolor sit amet,'
-                                    ' consetetur sadipscing elitr,'
-                                    ' sed diam nonumy eirmod tempor invidunt ut labore et'
-                                    ' dolore magna aliquyam erat, sed diam voluptua.'
-                                    ' At vero eos et accusam et justo duo dolores et ea rebum.'
-                                    ' Stet clita kasd gubergren,'
-                                    ' no sea takimata sanctus est'
-                                    ' Lorem ipsum dolor sit amet.'
-                                    ' Lorem ipsum dolor sit amet,'
-                                    ' consetetur sadipscing elitr,'
-                                    ' sed diam nonumy.',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                              top: size.height * .49,
-                              left: size.width * .01,
-                            ),
-                            child: myDefaultButton2(
-                                onPressed: () {},
-                                color: Colors.white,
-                                textColor: Colors.black,
-                                text: 'Help Them',
-                                width: size.width * .25,
-                                hight: size.height * .1,
-                                icon: true),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.only(
-                    bottom: size.height * .2,
-                    right: size.width * .1,
-                  ),
-                  child: Image(
-                    image: AssetImage('assets/images/image1.png'),
-                    height: 400,
-                    width: 400,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-        Stack(
-          children: [
-            Container(
-              height: size.height * 0.7,
-              width: size.width,
-              color: Colors.white,
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    bottom: size.height * .2,
-                    right: size.width * .1,
-                  ),
-                  child: Image(
-                    image: AssetImage('assets/images/image2.png'),
-                    height: 400,
-                    width: 400,
-                  ),
-                ),
-                Spacer(),
-                Padding(
-                  padding:  EdgeInsets.symmetric(vertical: size.width*.1,horizontal: size.height*.1),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: size.width * .05),
-                        child: Stack(
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Text(
-                                'About Petology ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 40,
-                                    color: Colors.black),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  top: size.height * .2, left: size.width * .01),
-                              child: Container(
-                                width: size.width * .26,
-                                height: size.height * .6,
-                                child: const Text(
-                                  'Lorem ipsum dolor sit amet,'
-                                      ' consetetur sadipscing elitr,'
-                                      ' sed diam nonumy eirmod tempor invidunt'
-                                      ' ut labore et dolore magna aliquyam erat, '
-                                      'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
 
 
-              ],
-            ),
-          ],
-        ),
-        Container(
-          width: size.width,
-          height: size.height*.9,
-          color: Colors.white,
-          child: Column(
-            children: [
-              const Text(
-                'Our friends who looking for a house ',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
-                    color: Colors.black
-                ),
-              ),
-              Container(
-                width: size.width*.2,
-                height: size.height*.3,
-                child: Card(
-                  color: Color(0xffeaeaea),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          //   height: height * .25,
-                          child: Stack(
-                            children: [
-                              AspectRatio(
-                                aspectRatio: 1,
-                                child: Image(
-                                  image: AssetImage(
-                                    "assets/images/elsa.png",
-                                  ),
-                                  width: width * 0.4,
-                                  height:height * 0.4,
-                                ),
-                              ),
-                              Positioned(
-                                top: 10,
-                                right: 5,
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.favorite,
-                                    size: 22,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Text(
-                          "Elsa",style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 3),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ButtonCustom(
-                                title: "See More",
-                                onTap: () {},
-                                height: height * .04,
-                                width: width * .1,
-                                icon: Icon(Icons.abc),
-                                color: Colors.black,
-                                color2: Colors.white,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              )
+    return BlocConsumer<AboutUsCubit,AboutUsState>(
+      listener: (context,state){},
+       builder: (context,state){
+         return Column(
+           children: [
+             Stack(
+               children: [
+                 Container(
+                   height: size.height * 0.7,
+                   width: size.width,
+                   decoration: BoxDecoration(
+                       gradient: LinearGradient(
+                           begin: Alignment.topRight,
+                           end: Alignment.topLeft,
+                           colors: [
+                             HexColor('#180701'),
+                             HexColor('#654538'),
+                           ])),
+                 ),
+                 Row(
+                   children: [
+                     Column(
+                       children: [
+                         Padding(
+                           padding: EdgeInsets.only(left: size.width * .05),
+                           child: Stack(
+                             children: [
+                               const Padding(
+                                 padding: EdgeInsets.all(15.0),
+                                 child: Text(
+                                   'Not only people\nneed a house',
+                                   style: TextStyle(
+                                       fontWeight: FontWeight.bold,
+                                       fontSize: 40,
+                                       color: Colors.white),
+                                 ),
+                               ),
+                               Padding(
+                                 padding: EdgeInsets.only(
+                                     top: size.height * .2, left: size.width * .01),
+                                 child: Container(
+                                   width: size.width * .26,
+                                   height: size.height * .6,
+                                   child: const Text(
+                                     'Lorem ipsum dolor sit amet,'
+                                         ' consetetur sadipscing elitr,'
+                                         ' sed diam nonumy eirmod tempor invidunt ut labore et'
+                                         ' dolore magna aliquyam erat, sed diam voluptua.'
+                                         ' At vero eos et accusam et justo duo dolores et ea rebum.'
+                                         ' Stet clita kasd gubergren,'
+                                         ' no sea takimata sanctus est'
+                                         ' Lorem ipsum dolor sit amet.'
+                                         ' Lorem ipsum dolor sit amet,'
+                                         ' consetetur sadipscing elitr,'
+                                         ' sed diam nonumy.',
+                                     style: TextStyle(
+                                       fontSize: 18,
+                                       color: Colors.white,
+                                     ),
+                                   ),
+                                 ),
+                               ),
+                               Padding(
+                                 padding: EdgeInsets.only(
+                                   top: size.height * .49,
+                                   left: size.width * .01,
+                                 ),
+                                 child: myDefaultButton2(
+                                     onPressed: () {},
+                                     color: Colors.white,
+                                     textColor: Colors.black,
+                                     text: 'Help Them',
+                                     width: size.width * .25,
+                                     hight: size.height * .1,
+                                     icon: true),
+                               ),
+                             ],
+                           ),
+                         ),
+                       ],
+                     ),
+                     Spacer(),
+                     Padding(
+                       padding: EdgeInsets.only(
+                         bottom: size.height * .2,
+                         right: size.width * .1,
+                       ),
+                       child: Image(
+                         image: AssetImage('assets/images/image1.png'),
+                         height: 400,
+                         width: 400,
+                       ),
+                     ),
+                   ],
+                 ),
+               ],
+             ),
+             Stack(
+               children: [
+                 Container(
+                   height: size.height * 0.7,
+                   width: size.width,
+                   color: Colors.white,
+                 ),
+                 Row(
+                   children: [
+                     Padding(
+                       padding: EdgeInsets.only(
+                         bottom: size.height * .2,
+                         right: size.width * .1,
+                       ),
+                       child: const Image(
+                         image: AssetImage('assets/images/image2.png'),
+                         height: 400,
+                         width: 400,
+                       ),
+                     ),
+                     const Spacer(),
+                     Padding(
+                       padding:  EdgeInsets.symmetric(vertical: size.width*.1,horizontal: size.height*.1),
+                       child: Column(
+                         children: [
+                           Padding(
+                             padding: EdgeInsets.only(left: size.width * .05),
+                             child: Stack(
+                               children: [
+                                 const Padding(
+                                   padding: EdgeInsets.all(15.0),
+                                   child: Text(
+                                     'About Petology ',
+                                     style: TextStyle(
+                                         fontWeight: FontWeight.bold,
+                                         fontSize: 40,
+                                         color: Colors.black),
+                                   ),
+                                 ),
+                                 Padding(
+                                   padding: EdgeInsets.only(
+                                       top: size.height * .2, left: size.width * .01),
+                                   child: Container(
+                                     width: size.width * .26,
+                                     height: size.height * .6,
+                                     child: const Text(
+                                       'Lorem ipsum dolor sit amet,'
+                                           ' consetetur sadipscing elitr,'
+                                           ' sed diam nonumy eirmod tempor invidunt'
+                                           ' ut labore et dolore magna aliquyam erat, '
+                                           'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+                                       style: TextStyle(
+                                         fontSize: 18,
+                                         color: Colors.black,
+                                       ),
+                                     ),
+                                   ),
+                                 ),
+                               ],
+                             ),
+                           ),
+                         ],
+                       ),
+                     ),
 
-            ],
-          ),
-        ),
+
+                   ],
+                 ),
+               ],
+             ),
+             Container(
+               width: size.width,
+               height: size.height*.9,
+               color: Colors.white,
+               child: Column(
+                 children: [
+                   const Text(
+                     'Our friends who looking for a house ',
+                     style: TextStyle(
+                         fontWeight: FontWeight.bold,
+                         fontSize: 40,
+                         color: Colors.black
+                     ),
+                   ),
+                   Container(
+                     width: size.width*.2,
+                     height: size.height*.3,
+                     child: Card(
+                       color: Color(0xffeaeaea),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(15),
+                       ),
+                       child: Padding(
+                         padding: EdgeInsets.all(20),
+                         child: Column(
+                           children: [
+                             SizedBox(
+                               //   height: height * .25,
+                               child: Stack(
+                                 children: [
+                                   AspectRatio(
+                                     aspectRatio: 1,
+                                     child: Image(
+                                       image: const AssetImage(
+                                         "assets/images/elsa.png",
+                                       ),
+                                       width: width * 0.4,
+                                       height:height * 0.4,
+                                     ),
+                                   ),
+                                   Positioned(
+                                     top: 10,
+                                     right: 5,
+                                     child: IconButton(
+                                       onPressed: () {},
+                                       icon: const Icon(
+                                         Icons.favorite,
+                                         size: 22,
+                                         color: Colors.grey,
+                                       ),
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+                             const Text(
+                               "Elsa",style: TextStyle(
+                               fontWeight: FontWeight.bold,
+                               fontSize: 20,
+                             ),
+                             ),
+                             const SizedBox(
+                               height: 5,
+                             ),
+                             Padding(
+                               padding: const EdgeInsets.symmetric(horizontal: 3),
+                               child: Column(
+                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                 children: [
+                                   ButtonCustom(
+                                     title: "See More",
+                                     onTap: () {},
+                                     height: height * .04,
+                                     width: width * .1,
+                                     icon: const Icon(Icons.abc),
+                                     color: Colors.black,
+                                     color2: Colors.white,
+                                   ),
+                                 ],
+                               ),
+                             )
+                           ],
+                         ),
+                       ),
+                     ),
+                   )
+
+                 ],
+               ),
+             ),
 
 
-      ],
+           ],
+         );
+       },
     );
   }
 }
@@ -285,7 +295,7 @@ class AdaptionContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Text(
@@ -295,7 +305,7 @@ class AdaptionContent extends StatelessWidget {
               fontSize: 25,
               fontWeight: FontWeight.bold),
         ),
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
         Text(
