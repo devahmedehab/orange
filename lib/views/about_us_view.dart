@@ -1,14 +1,7 @@
-import 'package:carousel_slider/carousel_controller.dart';
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange/repositories/button_custom/ButtonCustom.dart';
 import 'package:orange/repositories/component.dart';
-import 'package:orange/views/adaption_search_view.dart';
-
-import '../repositories/grid_view_component/grid_view_item.dart';
 import '../view_models/about_us_cubit.dart';
 
 
@@ -20,6 +13,9 @@ class AboutUSView extends StatefulWidget {
 class _AboutUSViewState extends State<AboutUSView> {
   @override
   Widget build(BuildContext context) {
+    var titleController=TextEditingController();
+    var bodyController=TextEditingController();
+
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     var size = MediaQuery.of(context).size;
@@ -29,7 +25,13 @@ class _AboutUSViewState extends State<AboutUSView> {
 
     return BlocConsumer<AboutUsCubit,AboutUsState>(
       listener: (context,state){
+        if(state is AboutUsSuccessState){
+          var model = AboutUsCubit.get(context).aboutsModel;
 
+          titleController.text = model.title as String;
+          bodyController.text = model.body as String;
+
+        }
       },
        builder: (context,state){
          return Column(
@@ -56,10 +58,10 @@ class _AboutUSViewState extends State<AboutUSView> {
                            padding: EdgeInsets.only(left: size.width * .05),
                            child: Stack(
                              children: [
-                               const Padding(
+                                Padding(
                                  padding: EdgeInsets.all(15.0),
                                  child: Text(
-                                   'Not only people\nneed a house',
+                                   titleController.text,
                                    style: TextStyle(
                                        fontWeight: FontWeight.bold,
                                        fontSize: 40,
@@ -72,18 +74,8 @@ class _AboutUSViewState extends State<AboutUSView> {
                                  child: Container(
                                    width: size.width * .26,
                                    height: size.height * .6,
-                                   child: const Text(
-                                     'Lorem ipsum dolor sit amet,'
-                                         ' consetetur sadipscing elitr,'
-                                         ' sed diam nonumy eirmod tempor invidunt ut labore et'
-                                         ' dolore magna aliquyam erat, sed diam voluptua.'
-                                         ' At vero eos et accusam et justo duo dolores et ea rebum.'
-                                         ' Stet clita kasd gubergren,'
-                                         ' no sea takimata sanctus est'
-                                         ' Lorem ipsum dolor sit amet.'
-                                         ' Lorem ipsum dolor sit amet,'
-                                         ' consetetur sadipscing elitr,'
-                                         ' sed diam nonumy.',
+                                   child:  Text(
+                                     bodyController.text ,
                                      style: TextStyle(
                                        fontSize: 18,
                                        color: Colors.white,
