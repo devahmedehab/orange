@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/models/footer_model.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/views/adaption.dart';
+import 'package:orange/views/adaption_search_view.dart';
 import '../../repositories/constants.dart';
 import '../../repositories/end_point.dart';
 import '../../views/about_us_view.dart';
@@ -28,6 +29,7 @@ class HomeViewModelCubit extends Cubit<HomeViewModelState> {
     RequestView(),
     SignUpView(),
     LoginView(),
+    AdaptionSearchView()
   ];
 
 

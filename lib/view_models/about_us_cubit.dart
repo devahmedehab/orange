@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:orange/models/about_model.dart';
 import 'package:orange/repositories/end_point.dart';
@@ -11,8 +12,15 @@ part 'about_us_state.dart';
 class AboutUsCubit extends Cubit<AboutUsState> {
   AboutUsCubit() : super(AboutUsInitialState());
 
+  static  AboutUsCubit get(context) => BlocProvider.of(context);
 
+  void changeScreen(int currentIndex)
+  {
 
+    index=currentIndex;
+
+    emit(ChangeScreenState());
+  }
   late AboutsModel aboutsModel;
 
 

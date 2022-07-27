@@ -15,4 +15,6 @@ class AboutUsErrorState extends AboutUsState {
 
   AboutUsErrorState(this.error);
 }
+class ChangeScreenState extends AboutUsState{}
+
 

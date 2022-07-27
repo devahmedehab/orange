@@ -33,12 +33,12 @@ class _HomeViewState extends State<HomeView> {
   List <Widget> screens=
   [
     AboutUSView(),
-   AdaptionSearchView(),
-   // AdaptionScreen(),
+    AdaptionScreen(),
     HelpYourFriendScreen(),
     RequestView(),
     SignUpView(),
     LoginView(),
+    AdaptionSearchView()
   ];
 
   int index=0;

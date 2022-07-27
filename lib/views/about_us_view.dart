@@ -6,7 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/button_custom/ButtonCustom.dart';
 import 'package:orange/repositories/component.dart';
+import 'package:orange/views/adaption_search_view.dart';
 
+import '../repositories/grid_view_component/grid_view_item.dart';
 import '../view_models/about_us_cubit.dart';
 
 
@@ -18,13 +20,17 @@ class AboutUSView extends StatefulWidget {
 class _AboutUSViewState extends State<AboutUSView> {
   @override
   Widget build(BuildContext context) {
+    final w = MediaQuery.of(context).size.width;
+    final h = MediaQuery.of(context).size.height;
     var size = MediaQuery.of(context).size;
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
 
     return BlocConsumer<AboutUsCubit,AboutUsState>(
-      listener: (context,state){},
+      listener: (context,state){
+
+      },
        builder: (context,state){
          return Column(
            children: [
@@ -204,78 +210,8 @@ class _AboutUSViewState extends State<AboutUSView> {
                          color: Colors.black
                      ),
                    ),
-                   Container(
-                     width: size.width*.2,
-                     height: size.height*.3,
-                     child: Card(
-                       color: Color(0xffeaeaea),
-                       shape: RoundedRectangleBorder(
-                         borderRadius: BorderRadius.circular(15),
-                       ),
-                       child: Padding(
-                         padding: EdgeInsets.all(20),
-                         child: Column(
-                           children: [
-                             SizedBox(
-                               //   height: height * .25,
-                               child: Stack(
-                                 children: [
-                                   AspectRatio(
-                                     aspectRatio: 1,
-                                     child: Image(
-                                       image: const AssetImage(
-                                         "assets/images/elsa.png",
-                                       ),
-                                       width: width * 0.4,
-                                       height:height * 0.4,
-                                     ),
-                                   ),
-                                   Positioned(
-                                     top: 10,
-                                     right: 5,
-                                     child: IconButton(
-                                       onPressed: () {},
-                                       icon: const Icon(
-                                         Icons.favorite,
-                                         size: 22,
-                                         color: Colors.grey,
-                                       ),
-                                     ),
-                                   ),
-                                 ],
-                               ),
-                             ),
-                             const Text(
-                               "Elsa",style: TextStyle(
-                               fontWeight: FontWeight.bold,
-                               fontSize: 20,
-                             ),
-                             ),
-                             const SizedBox(
-                               height: 5,
-                             ),
-                             Padding(
-                               padding: const EdgeInsets.symmetric(horizontal: 3),
-                               child: Column(
-                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                 children: [
-                                   ButtonCustom(
-                                     title: "See More",
-                                     onTap: () {},
-                                     height: height * .04,
-                                     width: width * .1,
-                                     icon: const Icon(Icons.abc),
-                                     color: Colors.black,
-                                     color2: Colors.white,
-                                   ),
-                                 ],
-                               ),
-                             )
-                           ],
-                         ),
-                       ),
-                     ),
-                   )
+
+
 
                  ],
                ),
@@ -288,6 +224,7 @@ class _AboutUSViewState extends State<AboutUSView> {
     );
   }
 }
+//AboutUsCubit.get(context).changeScreen(6);
 
 class AdaptionContent extends StatelessWidget {
   @override
