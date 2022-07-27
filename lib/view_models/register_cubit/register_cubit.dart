@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/models/login_model.dart';
 import 'package:orange/repositories/end_point.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
-import 'package:orange/view_models/register_cubit/states.dart';
+import 'package:orange/view_models/register_cubit/register_states.dart';
 
 import '../../repositories/constants.dart';
 

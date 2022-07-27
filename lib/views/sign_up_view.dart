@@ -4,8 +4,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component.dart';
 import 'package:orange/repositories/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
-import 'package:orange/view_models/register_cubit/cubit.dart';
-import 'package:orange/view_models/register_cubit/states.dart';
+import 'package:orange/view_models/register_cubit/register_cubit.dart';
+import 'package:orange/view_models/register_cubit/register_states.dart';
 import 'package:orange/views/home_view.dart';
 
 class SignUpView extends StatefulWidget {
