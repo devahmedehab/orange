@@ -316,7 +316,10 @@ class _AboutUSViewState extends State<AboutUSView> {
                     maxCrossAxisExtent: 300,
                   ),
                   itemBuilder: (context, index) {
-                    return BuildCard(context);
+                    return
+
+                        BuildCard(context);
+
                   },
                 ),
               ),
