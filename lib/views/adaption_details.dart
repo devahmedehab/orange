@@ -12,9 +12,9 @@ class _ServicesViewState extends State<ServicesAdaptionView> {
   @override
   Widget build(BuildContext context) {
     List<AssetImage> items = [
-      AssetImage('assets/images/CompositeLayer.png'),
       AssetImage('assets/images/Dog.png'),
-      AssetImage('assets/images/CompositeLayer.png'),
+      AssetImage('assets/images/Dog.png'),
+      AssetImage('assets/images/Dog.png'),
     ];
     CarouselController buttonCarouselController = CarouselController();
     var size = MediaQuery.of(context).size;
@@ -52,7 +52,7 @@ class _ServicesViewState extends State<ServicesAdaptionView> {
                     reverse: false,
                     autoPlay: false,
                     autoPlayInterval: Duration(seconds: 2),
-                    autoPlayAnimationDuration: Duration(microseconds: 2000),
+                    autoPlayAnimationDuration: const Duration(microseconds: 2000),
                     autoPlayCurve: Curves.fastOutSlowIn,
                     scrollDirection: Axis.horizontal,
                     pauseAutoPlayOnTouch: true,
@@ -68,11 +68,11 @@ class _ServicesViewState extends State<ServicesAdaptionView> {
                   child: InkWell(
                     onTap: () {
                       buttonCarouselController.nextPage(
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.linear);
                     },
                     child: Image(
-                      image: AssetImage('assets/images/Icon ionic-ios-.png'),
+                      image: const AssetImage('assets/images/Icon ionic-ios-.png'),
                       width: size.width * 1,
                       height: size.height * 1,
                     ),
@@ -87,13 +87,14 @@ class _ServicesViewState extends State<ServicesAdaptionView> {
                   height: 50,
                   child: InkWell(
                     onTap: () {
+
                       buttonCarouselController.nextPage(
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.linear);
                     },
                     child: Image(
                       image:
-                      AssetImage('assets/images/Icon ionic-ios- (1).png'),
+                      const AssetImage('assets/images/Icon ionic-ios- (1).png'),
                       width: size.width * 1,
                       height: size.height * 1,
                     ),
@@ -129,7 +130,7 @@ class AdaptionContent extends StatelessWidget {
                 fontWeight: FontWeight.bold
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
@@ -157,9 +158,9 @@ class AdaptionContent extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(right: 50,bottom: 30),
-                child: Image(image: AssetImage('assets/images/CompositeLayer (2).png')),
+              const Padding(
+                padding: EdgeInsets.only(right: 50,bottom: 30),
+                child: Image(image: AssetImage('assets/images/2.png')),
               )
             ],
           ),
@@ -224,11 +225,11 @@ class AdaptionContent extends StatelessWidget {
               color: HexColor('#F1F1F1'),
               child: Row(
                 children: [
-                  Image(
-                    image: AssetImage('assets/images/Icon ionic-ios- (2).png',
+                  const Image(
+                    image: AssetImage('assets/images/1.png',
                     ),
                   ),
-                  SizedBox(width: 50,),
+                  const SizedBox(width: 50,),
                   Text(
                     'Petfinder recommends that you should always take reasonable \n\n security steps before making adabtion.',
                     style: TextStyle(

@@ -4,13 +4,19 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange/repositories/component/constants.dart';
 import 'package:orange/repositories/grid_view_component/grid_view_item.dart';
 import 'package:orange/view_models/adaption_cubit/adaption_state.dart';
+import 'package:orange/views/home_view.dart';
 
 import '../repositories/component/component.dart';
 import '../view_models/adaption_cubit/adaption_cubit.dart';
 
-class AdaptionSearchView extends StatelessWidget {
+class AdaptionSearchView extends StatefulWidget {
   const AdaptionSearchView({Key? key}) : super(key: key);
 
+  @override
+  State<AdaptionSearchView> createState() => _AdaptionSearchViewState();
+}
+
+class _AdaptionSearchViewState extends State<AdaptionSearchView> {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
@@ -277,7 +283,12 @@ class AdaptionSearchView extends StatelessWidget {
                       ),
                       Container(
                         child:TextButton(
-                          onPressed:(){} ,
+                          onPressed:(){
+                            setState(() {
+                              index=7;
+                            });
+                            navigateAndEnd(context, HomeView());
+                          } ,
                           child: Text(
                             "Show more.....",
                             style: TextStyle(
