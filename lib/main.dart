@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/repositories/bloc_observer.dart';
-import 'package:orange/repositories/component/constants.dart';
 import 'package:orange/repositories/network/cache_helper.dart';
 import 'package:orange/repositories/network/dio_helper.dart';
 import 'package:orange/view_models/adaption_cubit/adaption_cubit.dart';

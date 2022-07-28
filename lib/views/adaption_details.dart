@@ -218,29 +218,27 @@ class AdaptionContent extends StatelessWidget {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 10,top: 10,bottom: 10),
-            child: Container(
-              width: size.width,
-              color: HexColor('#F1F1F1'),
-              child: Row(
-                children: [
-                  const Image(
-                    image: AssetImage('assets/images/1.png',
-                    ),
-                  ),
-                  const SizedBox(width: 50,),
-                  Text(
-                    'Petfinder recommends that you should always take reasonable \n\n security steps before making adabtion.',
-                    style: TextStyle(
-                        color: HexColor("492F24"),
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold
+          Container(
+            width: size.width,
+            color: HexColor('#F1F1F1'),
+            child: Row(
+              children: [
+                const Image(
+                  image: AssetImage('assets/images/1.png',
 
-                    ),
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(width: 20,),
+                Text(
+                  'Petfinder recommends that you should always take reasonable \n\n security steps before making adabtion.',
+                  style: TextStyle(
+                      color: HexColor("492F24"),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold
+
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(
